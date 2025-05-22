@@ -286,15 +286,15 @@
                     </ul>
                     
                     <h4>2.5.4 Expert Review Interface</h4>
-                    <p>The human-in-the-loop interface facilitates expert validation and correction of automated classifications:</p>
+                    <p>The planned expert review interface is designed to enable expert validation and correction of automated classifications, supporting future development of clinical applications:</p>
                     
                     <div class="interface-features">
                         <ul>
-                            <li><strong>Interactive Visualization:</strong> Simultaneous display of topographic maps, spectral plots, and time series with synchronized navigation and zooming capabilities</li>
-                            <li><strong>Comparison Tools:</strong> Side-by-side comparison with template components from validated artifact categories to assist decision-making</li>
-                            <li><strong>Batch Processing:</strong> Efficient review of multiple components with keyboard shortcuts and rapid classification workflows optimized for expert efficiency</li>
-                            <li><strong>Quality Metrics:</strong> Component-specific quality indicators including signal-to-noise ratio, topographic smoothness, and spectral coherence measures</li>
-                            <li><strong>Documentation Framework:</strong> Structured note-taking and rationale recording for expert decisions to support research reproducibility and training data generation</li>
+                            <li><strong>Interactive Visualization:</strong> Planned display of topographic maps, spectral plots, and time series with navigation capabilities for comprehensive component evaluation</li>
+                            <li><strong>Comparison Tools:</strong> Proposed side-by-side comparison with template components from validated artifact categories to assist in decision-making processes</li>
+                            <li><strong>Sequential Review:</strong> Planned review workflow for multiple components with structured classification processes</li>
+                            <li><strong>Quality Metrics:</strong> Component-specific quality indicators including signal-to-noise ratio, topographic smoothness, and spectral coherence measures for expert evaluation</li>
+                            <li><strong>Documentation Framework:</strong> Structured recording of expert decisions to support research reproducibility and contribute to training data development for future algorithm improvements</li>
                         </ul>
                     </div>
                     
@@ -337,31 +337,29 @@ for idx, (label, confidence) in enumerate(classifications):
     elif confidence < 0.8:
         review_required.append(idx)
         
-# Launch expert review interface for uncertain classifications
+# Planned expert review workflow for uncertain classifications
 if review_required:
-    expert_decisions = ica_vision.launch_review_interface(
-        ica, raw, review_required
-    )
+    # Future development: expert review interface for validation
+    print(f"Components requiring expert review: {review_required}")
     
-# Apply final artifact removal
-ica.exclude = artifact_indices + expert_decisions['exclude']
+# Apply artifact removal based on confidence thresholds
+ica.exclude = artifact_indices
 cleaned_raw = ica.apply(raw.copy())
 
-# Generate comprehensive processing report
-ica_vision.generate_processing_report(
-    classifications, expert_decisions,
-    output_path='ica_vision_report.html'
-)</code></pre>
+# Generate processing documentation
+# Future: comprehensive reporting capabilities
+print(f"Removed {len(artifact_indices)} artifact components")
+</code></pre>
                     
-                    <h4>2.5.6 Performance Optimization and Clinical Applications</h4>
-                    <p>The ICA Vision module includes several optimizations for different use contexts:</p>
+                    <h4>2.5.6 Development Considerations and Future Applications</h4>
+                    <p>The ICA Vision module development includes several considerations for future implementation:</p>
                     
                     <ul>
-                        <li><strong>Computational Efficiency:</strong> GPU acceleration for batch processing reducing classification time from hours to minutes for large datasets</li>
-                        <li><strong>Memory Management:</strong> Streaming processing capabilities for datasets exceeding available RAM with automatic checkpointing</li>
-                        <li><strong>Clinical Integration:</strong> DICOM compatibility and HL7 FHIR integration for electronic health record systems</li>
-                        <li><strong>Validation Protocols:</strong> Built-in quality assurance metrics and standardized reporting formats for regulatory compliance</li>
-                        <li><strong>Multi-Site Harmonization:</strong> Site-specific calibration procedures accounting for equipment differences and local artifact patterns</li>
+                        <li><strong>Computational Efficiency:</strong> Algorithm optimization for batch processing to enable analysis of large datasets</li>
+                        <li><strong>Memory Management:</strong> Efficient data handling strategies for processing datasets of varying sizes</li>
+                        <li><strong>Research Applications:</strong> Planned compatibility with standard neuroimaging data formats and research workflows</li>
+                        <li><strong>Validation Protocols:</strong> Development of quality assurance metrics and standardized evaluation procedures</li>
+                        <li><strong>Cross-Study Harmonization:</strong> Consideration of parameter standardization across different research contexts and recording conditions</li>
                     </ul>
                     
                     <h3>2.6 Specialized Processing Modules</h3>
@@ -803,297 +801,37 @@ artifact_report_summary = epoch_rejection.export_rejection_summary(
                         <li><strong>Paradigm-Specific Optimization:</strong> Performance tuning for different experimental paradigms with documented parameter recommendations</li>
                     </ul>
                     
-                    <h4>2.6.3 Channel Rejection Module: Bad Channel Detection and Spatial Analysis</h4>
+                    <h4>2.6.3 Channel Cleaning Methods: Theoretical Framework (Work in Progress)</h4>
                     
-                    <h5>2.6.3.1 Theoretical Framework</h5>
-                    <p>The Channel Rejection module addresses the critical task of identifying and managing problematic electrodes that compromise EEG data quality through technical failures, poor contact, or persistent artifact contamination. Unlike transient artifacts that affect specific time periods, bad channels represent systematic issues that persist throughout recordings and require different handling strategies focused on spatial rather than temporal domains.</p>
+                    <h5>2.6.3.1 Planned Approach</h5>
+                    <p>The proposed channel cleaning methods aim to address the identification and management of problematic electrodes that compromise EEG data quality. This component represents ongoing theoretical development focused on spatial domain analysis, distinct from temporal artifact detection approaches. The planned algorithms will evaluate electrode quality through multiple criteria to distinguish between technical failures and legitimate focal brain activity.</p>
                     
-                    <p>The approach combines multiple assessment criteria including impedance measurements, signal quality metrics, spatial correlation patterns, and temporal stability analysis to provide comprehensive electrode evaluation. Advanced algorithms distinguish between electrode-specific technical problems and legitimate focal brain activity, ensuring that clinically or scientifically relevant signals are preserved while removing truly problematic channels.</p>
-                    
-                    <h5>2.6.3.2 Multi-Criteria Bad Channel Identification</h5>
+                    <h5>2.6.3.2 Theoretical Algorithm Development</h5>
                     
                     <div class="academic-figure">
-                        <img src="assets/images/channels/CleanShot 2025-05-22 at 09.16.27@2x.png" alt="AutoClean Vision channel rejection interface showing multi-criteria bad channel detection" width="800" height="600">
+                        <img src="assets/images/channels/CleanShot 2025-05-22 at 09.16.27@2x.png" alt="Conceptual interface mockup for channel quality assessment methods under development" width="800" height="600">
                         <div class="figure-caption">
-                            <strong>Figure 9:</strong> Channel rejection interface demonstrating multi-criteria bad channel identification and spatial analysis. The interface displays (A) electrode impedance measurements with threshold monitoring, (B) spatial correlation analysis showing neighbor relationships, (C) signal quality metrics including noise levels and variance patterns, and (D) interpolation feasibility assessment with quality validation. The system combines impedance data, signal characteristics, and spatial relationships to provide comprehensive electrode evaluation while preserving clinically critical channels.
+                            <strong>Figure 9:</strong> Conceptual interface mockup for planned channel quality assessment methods. The proposed system would integrate (A) impedance monitoring capabilities, (B) spatial correlation analysis between neighboring electrodes, (C) signal quality metrics evaluation, and (D) theoretical interpolation assessment protocols. This represents ongoing development work toward comprehensive electrode evaluation methods.
                         </div>
                     </div>
                     
-                    <div class="bad-channel-criteria">
-                        <div class="criterion-category">
-                            <h6>Impedance-Based Assessment</h6>
-                            <p><strong>High Resistance Detection:</strong> Identification of electrodes exceeding standard impedance thresholds (typically >50kΩ for research, >25kΩ for clinical applications) indicating poor scalp contact or gel bridges.</p>
-                            <p><strong>Open Circuit Detection:</strong> Recognition of infinite or extremely high impedance values indicating complete electrode disconnection or amplifier input failure.</p>
-                            <p><strong>Impedance Asymmetry Analysis:</strong> Comparison of impedance values across homologous electrode pairs to identify unilateral technical problems.</p>
-                            <p><strong>Temporal Impedance Trends:</strong> Monitoring impedance changes over time to identify gradual degradation requiring electrode maintenance or replacement.</p>
-                        </div>
-                        
-                        <div class="criterion-category">
-                            <h6>Signal Quality Metrics</h6>
-                            <p><strong>Noise Level Assessment:</strong> Quantification of background noise levels relative to expected physiological signal ranges, identifying channels with excessive electronic noise or poor signal-to-noise ratios.</p>
-                            <p><strong>Amplitude Distribution Analysis:</strong> Detection of channels with abnormal amplitude distributions including excessive baseline drift, saturation events, or unusual variance patterns.</p>
-                            <p><strong>Frequency Content Evaluation:</strong> Identification of channels dominated by non-physiological frequency content including power line interference or high-frequency electronic noise.</p>
-                            <p><strong>Flatline Detection:</strong> Recognition of channels with insufficient signal variation indicating amplifier saturation, disconnection, or other technical failures.</p>
-                        </div>
-                        
-                        <div class="criterion-category">
-                            <h6>Spatial Correlation Analysis</h6>
-                            <p><strong>Neighbor Correlation Assessment:</strong> Comparison of each electrode's signal with its spatial neighbors, identifying channels that fail to correlate appropriately with nearby electrodes.</p>
-                            <p><strong>Global Correlation Patterns:</strong> Analysis of each channel's correlation with the overall electrode array to identify globally discordant channels.</p>
-                            <p><strong>Topographic Consistency Evaluation:</strong> Assessment of whether each electrode's signal contributes appropriately to expected spatial patterns of brain activity.</p>
-                            <p><strong>Outlier Detection in Spatial Domain:</strong> Statistical identification of channels that consistently deviate from spatial pattern expectations across multiple time periods.</p>
-                        </div>
-                    </div>
-                    
-                    <h5>2.6.3.3 Temporal Stability and Persistence Analysis</h5>
-                    
-                    <p>Comprehensive evaluation of channel behavior across time distinguishes persistent problems from transient issues:</p>
-                    
-                    <div class="temporal-analysis">
-                        <h6>Persistence Pattern Recognition</h6>
-                        <ul>
-                            <li><strong>Continuous Monitoring:</strong> Assessment of channel quality metrics across entire recording duration to identify consistently problematic electrodes</li>
-                            <li><strong>Stability Metrics:</strong> Quantification of signal stability including baseline drift patterns, variance consistency, and frequency content stability</li>
-                            <li><strong>Degradation Detection:</strong> Recognition of gradual signal quality deterioration indicating progressive electrode failure or contact degradation</li>
-                            <li><strong>Intermittent Problem Identification:</strong> Detection of channels with periodic quality issues that may indicate loose connections or environmental sensitivity</li>
-                        </ul>
-                        
-                        <h6>Context-Dependent Assessment</h6>
-                        <ul>
-                            <li><strong>Recording Phase Analysis:</strong> Evaluation of channel quality across different recording phases (baseline, task, rest) to identify context-specific problems</li>
-                            <li><strong>Environmental Correlation:</strong> Assessment of channel problems in relation to environmental factors including subject movement, equipment operation, and external interference</li>
-                            <li><strong>Progressive Quality Analysis:</strong> Tracking of channel quality evolution to predict imminent failures and recommend preventive interventions</li>
-                            <li><strong>Cross-Session Comparison:</strong> Analysis of channel performance across multiple recording sessions to identify systematic electrode positioning or preparation issues</li>
-                        </ul>
-                    </div>
-                    
-                    <h5>2.6.3.4 Spatial Pattern Recognition and Brain Activity Preservation</h5>
-                    
-                    <p>Advanced algorithms ensure that legitimate focal brain activity is distinguished from electrode artifacts:</p>
-                    
-                    <div class="spatial-pattern-analysis">
-                        <div class="pattern-analysis-method">
-                            <h6>Physiological Plausibility Assessment</h6>
-                            <p><strong>Methodology:</strong> Evaluation of whether focal channel activity exhibits characteristics consistent with known neurophysiological sources versus technical artifacts.</p>
-                            <p><strong>Implementation:</strong> Analysis of frequency content, amplitude relationships, and temporal patterns against databases of known physiological and artifactual signatures.</p>
-                            <p><strong>Applications:</strong> Preservation of epileptic spike activity, focal gamma oscillations, sensorimotor responses, and other legitimate focal brain phenomena.</p>
-                        </div>
-                        
-                        <div class="pattern-analysis-method">
-                            <h6>Gradient Field Analysis</h6>
-                            <p><strong>Methodology:</strong> Examination of spatial gradients around potentially problematic electrodes to distinguish point sources from distributed brain activity.</p>
-                            <p><strong>Implementation:</strong> Calculation of spatial derivatives and comparison with expected gradient patterns for different source types using forward modeling approaches.</p>
-                            <p><strong>Applications:</strong> Differentiation between electrode pop artifacts and genuine focal brain activity, identification of bridge artifacts affecting multiple electrodes.</p>
-                        </div>
-                        
-                        <div class="pattern-analysis-method">
-                            <h6>Reference-Independent Assessment</h6>
-                            <p><strong>Methodology:</strong> Analysis of channel quality using multiple reference schemes to ensure that problems are not reference-dependent artifacts.</p>
-                            <p><strong>Implementation:</strong> Evaluation using common average reference, linked mastoids, and robust referencing schemes to identify reference-sensitive versus genuine channel problems.</p>
-                            <p><strong>Applications:</strong> Distinction between bad electrodes and reference-related artifacts, optimization of reference selection for remaining channels.</p>
-                        </div>
-                    </div>
-                    
-                    <h5>2.6.3.5 Clinical and Research Context Integration</h5>
-                    
-                    <div class="context-integration">
-                        <div class="clinical-context">
-                            <h6>Clinical Applications</h6>
-                            <p><strong>Seizure Focus Preservation:</strong> Enhanced protection of electrodes over known or suspected seizure foci, with elevated thresholds for rejection and mandatory expert review before exclusion.</p>
-                            <p><strong>Critical Electrode Identification:</strong> Recognition of electrodes with special clinical significance (e.g., electrodes over tumor locations, surgical planning regions) requiring different evaluation criteria.</p>
-                            <p><strong>Patient Safety Considerations:</strong> Integration with clinical monitoring requirements ensuring that critical monitoring electrodes are maintained even with reduced signal quality when medically necessary.</p>
-                            <p><strong>Regulatory Compliance:</strong> Documentation and audit trail requirements for clinical applications with standardized reporting formats for medical record integration.</p>
-                        </div>
-                        
-                        <div class="research-context">
-                            <h6>Research Applications</h6>
-                            <p><strong>Region-of-Interest Protection:</strong> Specialized handling of electrodes in research-critical brain regions with study-specific criteria for acceptance versus rejection.</p>
-                            <p><strong>Experimental Design Integration:</strong> Consideration of experimental design requirements including minimum electrode density for source localization or connectivity analysis.</p>
-                            <p><strong>Cross-Subject Harmonization:</strong> Consistent channel rejection criteria across subjects in group studies to prevent systematic bias in statistical analyses.</p>
-                            <p><strong>Data Quality Standards:</strong> Implementation of research-grade quality thresholds with documentation of quality metrics for reproducible science.</p>
-                        </div>
-                    </div>
-                    
-                    <h5>2.6.3.6 Interpolation and Recovery Strategies</h5>
-                    
-                    <p>Sophisticated algorithms determine optimal strategies for handling identified bad channels:</p>
-                    
-                    <div class="recovery-strategies">
-                        <h6>Interpolation Feasibility Assessment</h6>
-                        <ul>
-                            <li><strong>Spatial Density Analysis:</strong> Evaluation of neighboring electrode density to determine whether reliable spatial interpolation is possible</li>
-                            <li><strong>Distance-Weighted Evaluation:</strong> Assessment of interpolation quality based on distance to nearest reliable electrodes and expected spatial smoothness</li>
-                            <li><strong>Topographic Validation:</strong> Post-interpolation quality assessment using cross-validation techniques and expert topographic evaluation</li>
-                            <li><strong>Analysis-Specific Recommendations:</strong> Different interpolation strategies for different analysis types (ERP averaging, source localization, connectivity analysis)</li>
-                        </ul>
-                        
-                        <h6>Alternative Processing Strategies</h6>
-                        <ul>
-                            <li><strong>Electrode Replacement Recommendations:</strong> Automated assessment of whether electrode repositioning or replacement is preferable to interpolation</li>
-                            <li><strong>Analysis Method Adaptation:</strong> Suggestions for modified analysis approaches that account for reduced electrode density</li>
-                            <li><strong>Quality Impact Assessment:</strong> Quantification of how channel removal affects different analysis outcomes including statistical power and spatial resolution</li>
-                            <li><strong>Multi-Modal Integration:</strong> Consideration of other data modalities (fMRI, structural MRI) that may compensate for lost spatial information</li>
-                        </ul>
-                    </div>
-                    
-                    <h5>2.6.3.7 Implementation with MNE-Python Channel Management</h5>
-                    
-                    <pre><code class="language-python"># Channel rejection comprehensive implementation
-import mne
-import numpy as np
-from autoclean_vision.channels import ChannelRejection
-
-# Load EEG data with impedance information
-raw = mne.io.read_raw_edf('subject_001.edf', preload=True)
-
-# Load impedance measurements if available
-impedance_file = 'subject_001_impedances.txt'
-impedances = ChannelRejection.load_impedance_data(impedance_file)
-
-# Initialize channel rejection module
-channel_rejection = ChannelRejection(
-    impedance_threshold_research=50e3,  # 50 kOhm for research
-    impedance_threshold_clinical=25e3,   # 25 kOhm for clinical
-    correlation_threshold=0.4,           # Minimum neighbor correlation
-    flatline_duration_threshold=5.0,    # 5 seconds of flatline
-    context='research'                   # Options: 'research', 'clinical'
-)
-
-# Configure context-specific parameters
-channel_rejection.configure_context(
-    study_type='connectivity_analysis',   # Affects minimum electrode requirements
-    critical_regions=['motor_cortex', 'visual_cortex'],  # ROI protection
-    minimum_neighbor_distance=3.0,       # cm, for interpolation feasibility
-    quality_documentation_level='full'   # Options: 'minimal', 'standard', 'full'
-)
-
-# Comprehensive bad channel detection
-bad_channel_report = channel_rejection.detect_bad_channels(
-    raw,
-    impedances=impedances,
-    use_spatial_analysis=True,
-    use_temporal_analysis=True,
-    generate_visualizations=True
-)
-
-# Review detection results
-print("Channel Quality Assessment:")
-print(f"Total channels: {len(raw.ch_names)}")
-print(f"Bad channels detected: {len(bad_channel_report['bad_channels'])}")
-print(f"Channels requiring expert review: {len(bad_channel_report['review_required'])}")
-
-# Detailed channel analysis
-for category, channels in bad_channel_report['categorized_problems'].items():
-    if channels:
-        print(f"{category}: {channels}")
-
-# Assess interpolation feasibility for each bad channel
-interpolation_assessment = channel_rejection.assess_interpolation_feasibility(
-    raw, bad_channel_report['bad_channels'],
-    analysis_type='connectivity',  # Options: 'erp', 'connectivity', 'source_localization'
-    quality_threshold=0.85
-)
-
-# Handle channels based on assessment
-channels_to_interpolate = []
-channels_to_exclude = []
-channels_needing_replacement = []
-
-for ch_name in bad_channel_report['bad_channels']:
-    assessment = interpolation_assessment[ch_name]
-    
-    if assessment['interpolation_quality'] >= 0.85:
-        channels_to_interpolate.append(ch_name)
-    elif assessment['critical_for_analysis']:
-        channels_needing_replacement.append(ch_name)
-        print(f"Warning: {ch_name} is critical but low quality. Consider electrode replacement.")
-    else:
-        channels_to_exclude.append(ch_name)
-
-# Apply channel management decisions
-if channels_to_interpolate:
-    print(f"Interpolating channels: {channels_to_interpolate}")
-    raw_interpolated = channel_rejection.interpolate_channels(
-        raw, channels_to_interpolate,
-        method='spherical_splines',  # Options: 'spherical_splines', 'distance_weighted'
-        validate_quality=True
-    )
-else:
-    raw_interpolated = raw.copy()
-
-# Mark remaining bad channels for exclusion
-if channels_to_exclude:
-    print(f"Excluding channels: {channels_to_exclude}")
-    raw_interpolated.info['bads'].extend(channels_to_exclude)
-
-# Quality validation after processing
-final_quality = channel_rejection.validate_final_quality(
-    raw_interpolated,
-    original_bad_channels=bad_channel_report['bad_channels'],
-    interpolated_channels=channels_to_interpolate
-)
-
-print(f"Final data quality score: {final_quality['overall_quality']:.3f}")
-print(f"Spatial resolution preserved: {final_quality['spatial_resolution']:.1%}")
-print(f"Recommended for analysis: {final_quality['analysis_ready']}")
-
-# Generate comprehensive processing report
-processing_report = channel_rejection.generate_processing_report(
-    original_raw=raw,
-    processed_raw=raw_interpolated,
-    bad_channel_report=bad_channel_report,
-    interpolation_assessment=interpolation_assessment,
-    impedance_data=impedances,
-    include_visualizations=True,
-    output_path='channel_rejection_report.html'
-)
-
-# Expert review interface for uncertain cases
-if bad_channel_report['review_required']:
-    expert_review = channel_rejection.launch_expert_review(
-        raw, bad_channel_report['review_required'],
-        include_context=True,
-        provide_recommendations=True
-    )
-    
-    # Apply expert decisions
-    for ch_name, decision in expert_review.items():
-        if decision == 'interpolate':
-            channels_to_interpolate.append(ch_name)
-        elif decision == 'exclude':
-            channels_to_exclude.append(ch_name)
-
-# Export final channel status for documentation
-channel_status = channel_rejection.export_channel_status(
-    bad_channel_report,
-    interpolation_assessment,
-    expert_review if 'expert_review' in locals() else None,
-    format='clinical_report'  # Options: 'csv', 'json', 'clinical_report'
-)</code></pre>
-                    
-                    <h5>2.6.3.8 Quality Assurance and Validation Protocols</h5>
-                    
-                    <p>Rigorous validation ensures reliable bad channel detection across diverse recording conditions:</p>
+                    <p>The theoretical framework encompasses three primary assessment domains under development:</p>
                     
                     <ul>
-                        <li><strong>Cross-Equipment Validation:</strong> Performance assessment across different EEG amplifier systems and electrode types to ensure robust detection criteria</li>
-                        <li><strong>Expert Agreement Studies:</strong> Systematic comparison with expert manual channel assessment across multiple datasets and clinical contexts</li>
-                        <li><strong>Interpolation Quality Validation:</strong> Comprehensive evaluation of interpolation accuracy using simulation studies and expert topographic assessment</li>
-                        <li><strong>Clinical Impact Assessment:</strong> Quantification of bad channel detection effects on clinical interpretation and diagnostic accuracy</li>
-                        <li><strong>Longitudinal Performance Tracking:</strong> Assessment of detection consistency across repeated recordings and different electrode preparation protocols</li>
-                        <li><strong>Population-Specific Optimization:</strong> Performance tuning for different populations including pediatric subjects where electrode placement challenges are common</li>
+                        <li><strong>Impedance-Based Assessment:</strong> Planned algorithms to evaluate electrode contact quality through impedance threshold analysis and temporal monitoring protocols</li>
+                        <li><strong>Signal Quality Metrics:</strong> Proposed methods for noise level assessment, amplitude distribution analysis, and frequency content evaluation to identify problematic channels</li>
+                        <li><strong>Spatial Correlation Analysis:</strong> Theoretical approaches for neighbor correlation assessment and topographic consistency evaluation</li>
                     </ul>
                     
-                    <h5>2.6.3.9 Integration with Clinical Workflows</h5>
+                    <h5>2.6.3.3 Development Status and Future Directions</h5>
                     
-                    <p>Seamless integration with clinical EEG workflows ensures practical utility in healthcare settings:</p>
+                    <p>The channel cleaning methods represent ongoing theoretical work with several key development priorities:</p>
                     
                     <ul>
-                        <li><strong>Real-Time Quality Monitoring:</strong> Continuous assessment during recording sessions with alerts for emerging electrode problems</li>
-                        <li><strong>Technologist Interface:</strong> User-friendly interfaces for EEG technologists with clear recommendations for immediate interventions</li>
-                        <li><strong>Documentation Standards:</strong> Automated generation of clinical reports meeting regulatory requirements for medical record documentation</li>
-                        <li><strong>Integration with EHR Systems:</strong> Compatibility with electronic health record systems for seamless clinical workflow integration</li>
-                        <li><strong>Quality Metrics Tracking:</strong> Long-term tracking of electrode performance and preparation quality for continuous improvement</li>
+                        <li><strong>Algorithm Development:</strong> Current focus on developing robust spatial pattern recognition algorithms for distinguishing electrode artifacts from legitimate focal brain activity</li>
+                        <li><strong>Validation Framework:</strong> Planned validation studies comparing theoretical approaches against expert manual assessment across diverse recording conditions</li>
+                        <li><strong>Integration Planning:</strong> Future consideration of how channel cleaning methods might complement existing preprocessing pipelines</li>
+                        <li><strong>Performance Optimization:</strong> Ongoing research into computational efficiency and accuracy trade-offs for eventual implementation</li>
                     </ul>
                     
                     <h3>2.7 Cross-Module Integration and Workflow Optimization</h3>
