@@ -3,731 +3,1807 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoClean Vision - Revolutionary EEG Artifact Detection</title>
-    <meta name="description" content="Vision-based EEG artifact detection system that transforms traditional signal processing through AI-powered visual pattern recognition.">
+    <title>Computer Vision Approaches to Automated EEG Artifact Classification</title>
+    <meta name="description" content="AutoClean Vision: A comprehensive framework for automated EEG artifact detection using computer vision and deep learning methodologies.">
+    <meta name="keywords" content="EEG, artifact detection, computer vision, machine learning, neuroscience, signal processing">
+    <meta name="author" content="AutoClean Vision Research Team">
+    
+    <!-- Academic Meta Tags -->
+    <meta name="citation_title" content="Computer Vision Approaches to Automated EEG Artifact Classification">
+    <meta name="citation_authors" content="AutoClean Vision Research Team">
+    <meta name="citation_publication_date" content="2025">
+    <meta name="citation_journal_title" content="AutoClean Vision Technical Documentation">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles-academic.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-links">Skip to main content</a>
+    
+    <!-- Academic Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="nav-brand">
-                <span class="brand-icon">🧠</span>
-                <span class="brand-text">AutoClean Vision</span>
-            </div>
+            <div class="nav-brand">AutoClean Vision</div>
             <ul class="nav-menu">
-                <li><a href="#problem" class="nav-link">The Problem</a></li>
-                <li><a href="#theory" class="nav-link">Theory</a></li>
-                <li><a href="#architecture" class="nav-link">Architecture</a></li>
-                <li><a href="#technologies" class="nav-link">Technologies</a></li>
-                <li><a href="#validation" class="nav-link">Validation</a></li>
-                <li><a href="#integration" class="nav-link">Integration</a></li>
+                <li><a href="#abstract" class="nav-link">Abstract</a></li>
+                <li><a href="#methodology" class="nav-link">Methodology</a></li>
+                <li><a href="#results" class="nav-link">Results</a></li>
+                <li><a href="#implementation" class="nav-link">Implementation</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-container">
+    <!-- Academic Hero Section -->
+    <header class="hero" role="banner">
+        <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    Revolutionary <span class="highlight">Vision-Based</span><br>
-                    EEG Artifact Detection
-                </h1>
-                <p class="hero-subtitle">
-                    From hours to seconds, from subjective to objective
-                </p>
-                <div class="hero-features">
-                    <div class="feature-item">
-                        <span class="feature-icon">⚡</span>
-                        <span>Fully automated, high-throughput processing</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">👁️</span>
-                        <span>Visual pattern recognition superiority</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🤝</span>
-                        <span>Human-AI collaboration framework</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🎯</span>
-                        <span>Expert-level consistency with transparency</span>
-                    </div>
+                <h1>Computer Vision Approaches to Automated EEG Artifact Classification</h1>
+                <p class="hero-subtitle">A comprehensive framework for scalable neurophysiological data preprocessing</p>
+                
+                <!-- Abstract -->
+                <div class="hero-abstract">
+                    <strong>Abstract:</strong> We present AutoClean Vision, a novel framework that applies computer vision methodologies to automated electroencephalographic (EEG) artifact detection and classification. By converting multi-channel EEG signals into visual representations and leveraging deep learning models trained on expert-annotated datasets, our approach targets expert-level classification across six artifact categories (brain, eye, muscle, heart, line noise, channel noise). The system is designed to provide significant improvements in processing speed and inter-rater reliability compared to traditional manual annotation methods, while maintaining seamless integration with existing MNE-Python workflows. We propose comprehensive validation studies to establish performance characteristics across diverse populations and clinical contexts.
                 </div>
+                
                 <div class="hero-cta">
-                    <button class="cta-button primary">Explore the Technology</button>
-                    <button class="cta-button secondary">View Documentation</button>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="pipeline-animation">
-                    <div class="pipeline-step" data-step="1">
-                        <div class="step-icon">📊</div>
-                        <div class="step-label">EEG Signal</div>
-                    </div>
-                    <div class="pipeline-arrow">→</div>
-                    <div class="pipeline-step" data-step="2">
-                        <div class="step-icon">🖼️</div>
-                        <div class="step-label">Image Conversion</div>
-                    </div>
-                    <div class="pipeline-arrow">→</div>
-                    <div class="pipeline-step" data-step="3">
-                        <div class="step-icon">🤖</div>
-                        <div class="step-label">AI Classification</div>
-                    </div>
+                    <a href="#results" class="cta-primary">View Validation Studies</a>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- The Problem Section -->
-    <section id="problem" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">The Problem: Traditional EEG Cleaning Limitations</h2>
-                <p class="section-subtitle">Current methods create bottlenecks that limit research and clinical applications</p>
-            </div>
-            <div class="problem-grid">
-                <div class="problem-item">
-                    <div class="problem-icon">⏱️</div>
-                    <h3>Manual Review Bottlenecks</h3>
-                    <p>Hours per dataset with expert review requirements</p>
-                </div>
-                <div class="problem-item">
-                    <div class="problem-icon">🎭</div>
-                    <h3>Subjective Expert Variability</h3>
-                    <p>Inconsistent decisions between different experts</p>
-                </div>
-                <div class="problem-item">
-                    <div class="problem-icon">📈</div>
-                    <h3>Statistical Feature Limitations</h3>
-                    <p>Traditional features miss complex visual patterns</p>
-                </div>
-                <div class="problem-item">
-                    <div class="problem-icon">❌</div>
-                    <h3>Inconsistent Artifact Detection</h3>
-                    <p>Variable performance across different datasets</p>
-                </div>
-            </div>
-            <div class="comparison-visual">
-                <div class="comparison-side traditional">
-                    <h4>Traditional Approach</h4>
-                    <div class="approach-steps">
-                        <div class="step">Manual inspection</div>
-                        <div class="step">Statistical thresholds</div>
-                        <div class="step">Expert review</div>
-                        <div class="step">Subjective decisions</div>
-                    </div>
-                    <div class="approach-result negative">
-                        <span class="result-icon">🐌</span>
-                        <span>Hours of manual work</span>
-                    </div>
-                </div>
-                <div class="vs-divider">VS</div>
-                <div class="comparison-side vision">
-                    <h4>AutoClean Vision</h4>
-                    <div class="approach-steps">
-                        <div class="step">Visual conversion</div>
-                        <div class="step">AI pattern recognition</div>
-                        <div class="step">Automated classification</div>
-                        <div class="step">Expert validation</div>
-                    </div>
-                    <div class="approach-result positive">
-                        <span class="result-icon">🚀</span>
-                        <span>Minutes of automated processing</span>
+    <main role="main" id="main-content">
+        <!-- Problem Statement -->
+        <section id="problem" class="academic-section">
+            <div class="container">
+                <div class="content-width">
+                    <h2>1. Problem Statement</h2>
+                    <p>Electroencephalographic (EEG) artifact removal represents a critical bottleneck in neurophysiological research pipelines. Current methodologies rely predominantly on manual expert review, introducing several systematic limitations:</p>
+                    
+                    <ul>
+                        <li><strong>Scalability constraints:</strong> Manual review requires 2-4 hours per dataset, limiting research throughput</li>
+                        <li><strong>Inter-rater variability:</strong> Cohen's κ = 0.6-0.8 between experts, indicating substantial disagreement</li>
+                        <li><strong>Feature representation limitations:</strong> Traditional statistical approaches fail to capture complex spatial-temporal-spectral patterns</li>
+                        <li><strong>Consistency across datasets:</strong> Performance degradation when applied to different recording conditions or populations</li>
+                    </ul>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/ica/CleanShot 2025-05-22 at 09.42.08@2x.png" alt="AutoClean Vision ICA component analysis showing real interface with topography, power spectrum, and time series" width="600" height="400">
+                        <div class="figure-caption">
+                            <strong>Figure 1:</strong> Independent Component Analysis visualization demonstrating multi-modal feature extraction. The system analyzes (A) scalp topography, (B) power spectral density, and (C) time series characteristics to classify components as brain activity or artifacts. This example shows a muscle artifact (Component 21) with characteristic edge-focused topography and high-frequency spectral dominance.
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Visual Examples Section -->
-            <div class="visual-examples">
-                <h3>Real-World Example: ICA Component Analysis</h3>
-                <div class="example-showcase">
-                    <img src="assets/images/ica_component_analysis.png" alt="ICA Component Analysis Example" class="example-image">
-                    <div class="example-description">
-                        <h4>Muscle Artifact Detection</h4>
-                        <p>This example shows AutoClean Vision's analysis of ICA Component 21, correctly classified as muscle artifact with 98% confidence. The system identifies:</p>
+        </section>
+
+        <!-- Methodology -->
+        <section id="methodology" class="academic-section">
+            <div class="container">
+                <div class="content-width">
+                    <h2>2. Methodology</h2>
+                    
+                    <h3>2.1 System Architecture</h3>
+                    <p>AutoClean Vision employs a modular architecture comprising five specialized analysis modules:</p>
+                    
+                    <ul>
+                        <li><strong>ICA Vision Module:</strong> Independent component analysis with visual classification</li>
+                        <li><strong>Peak Detection Module:</strong> Spectral peak identification using visual heuristics</li>
+                        <li><strong>Continuous Rejection Module:</strong> Real-time artifact detection in streaming data</li>
+                        <li><strong>Epoch Rejection Module:</strong> Trial-based artifact identification</li>
+                        <li><strong>Channel Rejection Module:</strong> Bad channel detection and marking</li>
+                    </ul>
+                    
+                    <h3>2.2 Visual Feature Extraction</h3>
+                    <p>The core innovation of our approach lies in transforming traditional signal processing into computer vision problems. For each EEG component or segment, we generate standardized visual representations:</p>
+                    
+                    <ol>
+                        <li><strong>Topographic maps:</strong> Spatial distribution of electrical activity across the scalp</li>
+                        <li><strong>Power spectral density plots:</strong> Frequency domain characteristics with background modeling</li>
+                        <li><strong>Time series visualization:</strong> Temporal patterns and morphological features</li>
+                    </ol>
+                    
+                    <h3>2.3 Classification Framework</h3>
+                    <p>Components are classified into six categories based on neurophysiological characteristics:</p>
+                    
+                    <table class="academic-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Topographic Features</th>
+                                <th>Spectral Characteristics</th>
+                                <th>Temporal Patterns</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Brain</td>
+                                <td>Dipolar, central/parietal</td>
+                                <td>1/f decrease, alpha peaks</td>
+                                <td>Rhythmic, event-related</td>
+                            </tr>
+                            <tr>
+                                <td>Eye</td>
+                                <td>Frontal activation</td>
+                                <td>Low-frequency dominance (&lt;5Hz)</td>
+                                <td>Sharp deflections, saccades</td>
+                            </tr>
+                            <tr>
+                                <td>Muscle</td>
+                                <td>Edge-focused, shallow</td>
+                                <td>High-frequency power (&gt;20Hz)</td>
+                                <td>Sustained spiky activity</td>
+                            </tr>
+                            <tr>
+                                <td>Heart</td>
+                                <td>Broad electrical gradient</td>
+                                <td>QRS-related periodicity</td>
+                                <td>Regular complexes (~1Hz)</td>
+                            </tr>
+                            <tr>
+                                <td>Line Noise</td>
+                                <td>Variable distribution</td>
+                                <td>Sharp 50/60Hz peaks</td>
+                                <td>Sinusoidal oscillations</td>
+                            </tr>
+                            <tr>
+                                <td>Channel Noise</td>
+                                <td>Single electrode focus</td>
+                                <td>1/f-like spectrum</td>
+                                <td>Erratic high-amplitude</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-caption">
+                        <strong>Table 1:</strong> Classification criteria for EEG component categorization. Each category is defined by distinct patterns across spatial, spectral, and temporal domains.
+                    </div>
+                    
+                    <h3>2.4 Peak Detection Algorithm</h3>
+                    <p>Our peak detection module implements a multi-candidate visual heuristic approach:</p>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/peaks/CleanShot 2025-04-30 at 16.38.26@2x.png" alt="AutoClean Vision peak detection interface showing multi-candidate visual heuristic analysis" width="800" height="600">
+                        <div class="figure-caption">
+                            <strong>Figure 2:</strong> AutoClean Vision peak detection interface demonstrating multi-candidate visual heuristic approach. The interface shows detrended power spectrum analysis with (A) observed spectral power in blue, (B) background noise model in orange, (C) algorithmic peak detection markers, and (D) visual prominence ranking system. The system identifies multiple candidate peaks and ranks them by visual prominence, enabling override of algorithmic decisions when visual analysis provides superior peak identification. This approach combines traditional signal processing with human-like visual pattern recognition for enhanced spectral analysis accuracy.
+                        </div>
+                    </div>
+                    
+                    <ol>
+                        <li>Identify local maxima with slope reversal on detrended spectra</li>
+                        <li>Filter peaks exceeding background model thresholds</li>
+                        <li>Rank up to three candidates by visual prominence</li>
+                        <li>Apply expert-defined override criteria when visual analysis disagrees with algorithmic detection</li>
+                    </ol>
+                    
+                    <h3>2.5 ICA Vision Module: Component Classification Framework</h3>
+                    
+                    <h4>2.5.1 Theoretical Foundation</h4>
+                    <p>Independent Component Analysis (ICA) decomposes multi-channel EEG signals into maximally independent source components, each representing distinct neurophysiological or artifactual processes. The ICA Vision module transforms this mathematical decomposition into a computer vision problem by analyzing the spatial, spectral, and temporal signatures of each component through standardized visual representations.</p>
+                    
+                    <p>The approach leverages the principle that different artifact types exhibit characteristic visual patterns that experienced EEG analysts recognize intuitively. By codifying these visual recognition patterns into computational frameworks, the system achieves expert-level consistency while providing scalable automation for large-scale studies.</p>
+                    
+                    <h4>2.5.2 Visual Classification Architecture</h4>
+                    
+                    <h5>2.5.2.1 Multi-Modal Feature Extraction</h5>
+                    <p>For each ICA component, the system generates three standardized visual representations that capture complementary information:</p>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/ica/CleanShot 2025-05-22 at 09.06.16@2x.png" alt="AutoClean Vision ICA component analysis interface showing multi-modal feature extraction" width="800" height="600">
+                        <div class="figure-caption">
+                            <strong>Figure 3:</strong> AutoClean Vision ICA component analysis interface demonstrating multi-modal feature extraction. The interface displays simultaneous analysis of (A) topographic spatial distribution using spherical spline interpolation, (B) power spectral density with robust background modeling to highlight spectral peaks and deviations, and (C) representative time series epochs showing component activation patterns. This integrated visual approach enables expert-level pattern recognition for reliable component classification across all six artifact categories.
+                        </div>
+                    </div>
+                    
+                    <div class="module-figure-gallery">
+                        <div class="academic-figure">
+                            <img src="assets/images/ica/brain_component.webp" alt="Example of brain component classification showing dipolar topography and physiological spectrum" width="400" height="300">
+                            <div class="figure-caption">
+                                <strong>Figure 4:</strong> Brain component example showing characteristic dipolar topography with central maximum, 1/f spectral decline with alpha peak at 10Hz, and rhythmic oscillatory time series patterns consistent with cortical neuronal activity.
+                            </div>
+                        </div>
+                        
+                        <div class="academic-figure">
+                            <img src="assets/images/ica/heart_rate.webp" alt="Example of cardiac artifact component showing QRS-like patterns and heart rate frequency" width="400" height="300">
+                            <div class="figure-caption">
+                                <strong>Figure 5:</strong> Cardiac artifact component displaying broad electrical field gradient, narrowband spectral peak at heart rate frequency (~1Hz), and regular QRS complex morphology with stable inter-beat intervals.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/ica/CleanShot 2025-05-22 at 09.42.24@2x.png" alt="ICA component classification results interface showing confidence scores and expert review options" width="800" height="500">
+                        <div class="figure-caption">
+                            <strong>Figure 6:</strong> Classification results interface showing component-by-component analysis with confidence scores, category assignments, and expert review options. The interface provides detailed reasoning for each classification decision and enables efficient expert validation workflows for uncertain classifications below the confidence threshold.
+                        </div>
+                    </div>
+                    
+                    <ul>
+                        <li><strong>Topographic Maps:</strong> Standardized scalp projections using spherical spline interpolation with consistent color scaling (-3 to +3 arbitrary units) and electrode position overlay for spatial pattern recognition</li>
+                        <li><strong>Power Spectral Density:</strong> Frequency domain analysis (0.1-50 Hz) with background noise modeling using robust linear regression to highlight spectral peaks and deviations from physiological patterns</li>
+                        <li><strong>Time Series Morphology:</strong> Representative epochs (2-second windows) displaying component activation patterns with standardized amplitude scaling for temporal feature extraction</li>
+                    </ul>
+                    
+                    <h5>2.5.2.2 Component Category Definitions</h5>
+                    
+                    <div class="component-categories">
+                        <div class="category-detail">
+                            <h6>Brain Components</h6>
+                            <p><strong>Topographic Signature:</strong> Dipolar patterns with central, parietal, or occipital maxima reflecting cortical source projections. Smooth spatial gradients indicating deep cortical or subcortical generators.</p>
+                            <p><strong>Spectral Characteristics:</strong> 1/f spectral decline with physiological peaks in alpha (8-12 Hz), beta (13-30 Hz), or theta (4-8 Hz) bands. Absence of high-frequency artifactual content above 30 Hz.</p>
+                            <p><strong>Temporal Features:</strong> Rhythmic oscillations, event-related potentials, or sustained activation patterns consistent with neuronal population dynamics. Low variance in baseline periods.</p>
+                        </div>
+                        
+                        <div class="category-detail">
+                            <h6>Eye Artifacts</h6>
+                            <p><strong>Topographic Signature:</strong> Frontal electrode dominance (Fp1, Fp2, AF3, AF4) with characteristic asymmetry for horizontal movements or bilateral activation for vertical movements and blinks.</p>
+                            <p><strong>Spectral Characteristics:</strong> Low-frequency dominance below 5 Hz with steep high-frequency rolloff. Limited spectral power above 20 Hz distinguishing from muscle artifacts.</p>
+                            <p><strong>Temporal Features:</strong> Sharp deflections corresponding to saccades, sustained deviations during fixation periods, or characteristic blink morphology with rapid rise and exponential decay.</p>
+                        </div>
+                        
+                        <div class="category-detail">
+                            <h6>Muscle Artifacts</h6>
+                            <p><strong>Topographic Signature:</strong> Edge-focused distributions over temporal, frontal, or occipital regions corresponding to muscle group anatomy. Shallow topographies indicating superficial sources.</p>
+                            <p><strong>Spectral Characteristics:</strong> High-frequency dominance above 20 Hz with broadband noise characteristics. Elevated power across wide frequency ranges indicating electromyographic activity.</p>
+                            <p><strong>Temporal Features:</strong> Sustained high-frequency oscillations, burst patterns during movement, or tonic activation during muscle tension. High variance and spiky morphology.</p>
+                        </div>
+                        
+                        <div class="category-detail">
+                            <h6>Cardiac Artifacts</h6>
+                            <p><strong>Topographic Signature:</strong> Broad electrical field gradient often with posterior maximum reflecting cardiac dipole orientation. May show asymmetric patterns depending on heart position.</p>
+                            <p><strong>Spectral Characteristics:</strong> Narrowband peaks at heart rate frequency (~1 Hz) and harmonics. QRS complex-related periodicity with characteristic frequency signature.</p>
+                            <p><strong>Temporal Features:</strong> Regular complexes with sharp QRS morphology followed by slower T-wave components. Stable inter-beat intervals with physiological heart rate variability.</p>
+                        </div>
+                        
+                        <div class="category-detail">
+                            <h6>Line Noise</h6>
+                            <p><strong>Topographic Signature:</strong> Variable spatial distribution depending on interference source proximity and grounding configuration. May affect all electrodes uniformly or show focal patterns.</p>
+                            <p><strong>Spectral Characteristics:</strong> Sharp spectral peaks at 50 Hz or 60 Hz (depending on local electrical grid) with associated harmonics at 100/120 Hz, 150/180 Hz. High spectral resolution reveals narrow bandwidth.</p>
+                            <p><strong>Temporal Features:</strong> Sinusoidal oscillations with stable amplitude and phase. Minimal modulation except during electrical equipment switching events.</p>
+                        </div>
+                        
+                        <div class="category-detail">
+                            <h6>Channel Noise</h6>
+                            <p><strong>Topographic Signature:</strong> Focal activation limited to single electrode or small electrode cluster. Sharp spatial gradients indicating localized source rather than distributed brain activity.</p>
+                            <p><strong>Spectral Characteristics:</strong> Variable spectral content ranging from broadband noise to specific frequency artifacts. Often includes high-frequency components inconsistent with physiological sources.</p>
+                            <p><strong>Temporal Features:</strong> Erratic high-amplitude deflections, baseline drift, or intermittent connectivity issues. Poor correlation with neighboring electrodes indicating focal technical problems.</p>
+                        </div>
+                    </div>
+                    
+                    <h4>2.5.3 Confidence Scoring System</h4>
+                    <p>The classification system provides probabilistic confidence scores (0-1 scale) for each component category, enabling nuanced decision-making and quality control:</p>
+                    
+                    <ul>
+                        <li><strong>Feature Consistency Analysis:</strong> Cross-domain validation ensuring topographic, spectral, and temporal features align with category expectations</li>
+                        <li><strong>Population Context Integration:</strong> Age-appropriate pattern recognition accounting for developmental differences in brain activity and artifact characteristics</li>
+                        <li><strong>Uncertainty Quantification:</strong> Explicit modeling of classification uncertainty with recommendations for expert review when confidence scores fall below population-specific thresholds</li>
+                        <li><strong>Expert Override Integration:</strong> Learning framework incorporating expert corrections to improve future classification accuracy</li>
+                    </ul>
+                    
+                    <h4>2.5.4 Expert Review Interface</h4>
+                    <p>The planned expert review interface is designed to enable expert validation and correction of automated classifications, supporting future development of clinical applications:</p>
+                    
+                    <div class="interface-features">
                         <ul>
-                            <li><strong>Topography:</strong> Localized temporal pattern indicating shallow source</li>
-                            <li><strong>Spectrum:</strong> High-frequency dominance characteristic of muscle activity</li>
-                            <li><strong>Time Series:</strong> Sustained spiky activity patterns</li>
+                            <li><strong>Interactive Visualization:</strong> Planned display of topographic maps, spectral plots, and time series with navigation capabilities for comprehensive component evaluation</li>
+                            <li><strong>Comparison Tools:</strong> Proposed side-by-side comparison with template components from validated artifact categories to assist in decision-making processes</li>
+                            <li><strong>Sequential Review:</strong> Planned review workflow for multiple components with structured classification processes</li>
+                            <li><strong>Quality Metrics:</strong> Component-specific quality indicators including signal-to-noise ratio, topographic smoothness, and spectral coherence measures for expert evaluation</li>
+                            <li><strong>Documentation Framework:</strong> Structured recording of expert decisions to support research reproducibility and contribute to training data development for future algorithm improvements</li>
                         </ul>
-                        <p>Traditional methods would require manual expert review, while AutoClean Vision provides instant, confident classification with detailed reasoning.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    
+                    <h4>2.5.5 Implementation with MNE-Python</h4>
+                    <p>Seamless integration with the MNE-Python ecosystem ensures compatibility with existing neuroimaging workflows:</p>
+                    
+                    <pre><code class="language-python"># ICA Vision integration example
+import mne
+from autoclean_vision.ica import ICAVision
 
-    <!-- Theoretical Foundation Section -->
-    <section id="theory" class="section bg-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Theoretical Foundation: Vision-AI Paradigm Shift</h2>
-                <p class="section-subtitle">Leveraging human visual pattern recognition through artificial intelligence</p>
-            </div>
-            <div class="theory-content">
-                <div class="theory-concepts">
-                    <div class="concept-item">
-                        <h3>Visual Pattern Recognition Advantages</h3>
-                        <p>Human experts excel at visual pattern recognition. Our system codifies this expertise into AI models that can process visual representations of EEG data with expert-level accuracy.</p>
-                    </div>
-                    <div class="concept-item">
-                        <h3>Multi-Modal Analysis Integration</h3>
-                        <p>Combines topography, spectrum, and time series analysis in a unified visual framework, enabling comprehensive artifact detection that traditional methods cannot achieve.</p>
-                    </div>
-                    <div class="concept-item">
-                        <h3>Deep Learning Applied to EEG Visual Representations</h3>
-                        <p>Transforms complex signal processing into computer vision problems, leveraging decades of advances in image analysis and pattern recognition.</p>
-                    </div>
-                    <div class="concept-item">
-                        <h3>Bridge Between Traditional and Modern AI</h3>
-                        <p>Maintains compatibility with existing workflows while introducing cutting-edge AI capabilities for enhanced performance and transparency.</p>
-                    </div>
-                </div>
-                <div class="theory-visual">
-                    <div class="paradigm-shift">
-                        <div class="old-paradigm">
-                            <h4>Traditional Signal Processing</h4>
-                            <div class="paradigm-flow">
-                                <div class="flow-item">Raw EEG</div>
-                                <div class="flow-arrow">↓</div>
-                                <div class="flow-item">Statistical Features</div>
-                                <div class="flow-arrow">↓</div>
-                                <div class="flow-item">Threshold Rules</div>
-                                <div class="flow-arrow">↓</div>
-                                <div class="flow-item">Manual Review</div>
-                            </div>
-                        </div>
-                        <div class="new-paradigm">
-                            <h4>Vision-Based AI Processing</h4>
-                            <div class="paradigm-flow">
-                                <div class="flow-item">Raw EEG</div>
-                                <div class="flow-arrow">↓</div>
-                                <div class="flow-item">Visual Representation</div>
-                                <div class="flow-arrow">↓</div>
-                                <div class="flow-item">AI Pattern Recognition</div>
-                                <div class="flow-arrow">↓</div>
-                                <div class="flow-item">Expert Validation</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+# Load and preprocess EEG data
+raw = mne.io.read_raw_edf('subject_001.edf', preload=True)
+raw.filter(l_freq=1.0, h_freq=40.0)
 
-    <!-- System Architecture Section -->
-    <section id="architecture" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">System Architecture: Modular AI Agents</h2>
-                <p class="section-subtitle">Specialized components working together for comprehensive EEG analysis</p>
-            </div>
-            <div class="architecture-diagram">
-                <div class="central-hub">
-                    <div class="hub-title">AutoClean Vision Core</div>
-                    <div class="hub-subtitle">Orchestration & Integration</div>
-                </div>
-                <div class="module-grid">
-                    <div class="module-item" data-module="ica">
-                        <div class="module-icon">🔍</div>
-                        <h3>ICA Vision</h3>
-                        <p>Component classification with visual reasoning</p>
-                        <div class="module-details">
-                            <span class="detail-badge">98% Accuracy</span>
-                            <span class="detail-badge">6 Categories</span>
-                        </div>
-                    </div>
-                    <div class="module-item" data-module="peak">
-                        <div class="module-icon">📈</div>
-                        <h3>Peak Finder</h3>
-                        <p>Spectral analysis with multi-candidate ranking</p>
-                        <div class="module-details">
-                            <span class="detail-badge">Visual Heuristics</span>
-                            <span class="detail-badge">3 Candidates</span>
-                        </div>
-                    </div>
-                    <div class="module-item" data-module="continuous">
-                        <div class="module-icon">🌊</div>
-                        <h3>Continuous Rejection</h3>
-                        <p>Real-time artifact detection</p>
-                        <div class="module-details">
-                            <span class="detail-badge">Real-time</span>
-                            <span class="detail-badge">Adaptive</span>
-                        </div>
-                    </div>
-                    <div class="module-item" data-module="epoch">
-                        <div class="module-icon">📊</div>
-                        <h3>Epoch Rejection</h3>
-                        <p>Trial-based cleaning</p>
-                        <div class="module-details">
-                            <span class="detail-badge">Trial-wise</span>
-                            <span class="detail-badge">Context-aware</span>
-                        </div>
-                    </div>
-                    <div class="module-item" data-module="channel">
-                        <div class="module-icon">📡</div>
-                        <h3>Channel Rejection</h3>
-                        <p>Bad channel identification</p>
-                        <div class="module-details">
-                            <span class="detail-badge">Single electrode</span>
-                            <span class="detail-badge">Focal analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+# Perform ICA decomposition
+ica = mne.preprocessing.ICA(n_components=25, random_state=42)
+ica.fit(raw)
 
-    <!-- Core Technologies Section -->
-    <section id="technologies" class="section bg-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Core Technologies: Deep Dive</h2>
-                <p class="section-subtitle">Advanced AI techniques powering each component</p>
-            </div>
-            
-            <!-- ICA Vision Module -->
-            <div class="technology-module">
-                <h3 class="module-title">ICA Vision Module</h3>
-                <div class="module-content">
-                    <div class="classification-grid">
-                        <div class="classification-category" data-category="brain">
-                            <div class="category-header">
-                                <span class="category-icon">🧠</span>
-                                <h4>Brain</h4>
-                                <span class="confidence-badge">High Confidence</span>
-                            </div>
-                            <p>Dipolar topography, 1/f spectrum, physiological patterns</p>
-                        </div>
-                        <div class="classification-category" data-category="eye">
-                            <div class="category-header">
-                                <span class="category-icon">👁️</span>
-                                <h4>Eye</h4>
-                                <span class="confidence-badge">High Confidence</span>
-                            </div>
-                            <p>Frontal activation patterns (vertical/horizontal movements)</p>
-                        </div>
-                        <div class="classification-category" data-category="muscle">
-                            <div class="category-header">
-                                <span class="category-icon">💪</span>
-                                <h4>Muscle</h4>
-                                <span class="confidence-badge">High Confidence</span>
-                            </div>
-                            <p>High-frequency spectral dominance, edge-focused topography</p>
-                        </div>
-                        <div class="classification-category" data-category="heart">
-                            <div class="category-header">
-                                <span class="category-icon">❤️</span>
-                                <h4>Heart</h4>
-                                <span class="confidence-badge">High Confidence</span>
-                            </div>
-                            <p>QRS-like time series, broad electrical gradients</p>
-                        </div>
-                        <div class="classification-category" data-category="line_noise">
-                            <div class="category-header">
-                                <span class="category-icon">⚡</span>
-                                <h4>Line Noise</h4>
-                                <span class="confidence-badge">High Confidence</span>
-                            </div>
-                            <p>Sharp 50/60Hz spectral peaks</p>
-                        </div>
-                        <div class="classification-category" data-category="channel_noise">
-                            <div class="category-header">
-                                <span class="category-icon">📡</span>
-                                <h4>Channel Noise</h4>
-                                <span class="confidence-badge">High Confidence</span>
-                            </div>
-                            <p>Single electrode focal activity</p>
-                        </div>
-                    </div>
-                    <div class="performance-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">98%</span>
-                            <span class="stat-label">Classification Accuracy</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">0.95+</span>
-                            <span class="stat-label">Expert-level Consistency</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">0-1</span>
-                            <span class="stat-label">Confidence Scoring</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+# Initialize ICA Vision classifier
+ica_vision = ICAVision(
+    confidence_threshold=0.8,
+    population='adult',  # Options: 'adult', 'adolescent', 'child', 'infant'
+    expert_mode=True     # Enable detailed diagnostic outputs
+)
 
-            <!-- Peak Detection Strategy -->
-            <div class="technology-module">
-                <h3 class="module-title">Peak Detection Strategy</h3>
-                <div class="module-content">
-                    <div class="peak-strategy">
-                        <h4>Multi-Candidate Visual Heuristic</h4>
-                        <div class="peak-example">
-                            <img src="assets/images/peak_detection.png" alt="Peak Detection Example" class="peak-image">
-                            <div class="peak-analysis">
-                                <h5>Visual Peak Analysis</h5>
-                                <p>This detrended spectrum shows AutoClean Vision's peak detection at work. The blue line represents EEG power, while the orange dashed line shows the background model. The red vertical line indicates the algorithmically detected peak, which the vision system can override based on visual prominence.</p>
-                                <div class="peak-candidates">
-                                    <div class="candidate">
-                                        <span class="freq">7.5 Hz</span>
-                                        <span class="confidence high">High Confidence</span>
-                                    </div>
-                                    <div class="candidate">
-                                        <span class="freq">8.5 Hz</span>
-                                        <span class="confidence moderate">Moderate</span>
-                                    </div>
-                                    <div class="candidate">
-                                        <span class="freq">11.0 Hz</span>
-                                        <span class="confidence low">Low</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="strategy-steps">
-                            <div class="strategy-step">
-                                <span class="step-number">1</span>
-                                <div class="step-content">
-                                    <h5>Identify Local Maxima</h5>
-                                    <p>Find slope reversal points on detrended spectra</p>
-                                </div>
-                            </div>
-                            <div class="strategy-step">
-                                <span class="step-number">2</span>
-                                <div class="step-content">
-                                    <h5>Filter Background Exceeding Peaks</h5>
-                                    <p>Retain only peaks that exceed background model thresholds</p>
-                                </div>
-                            </div>
-                            <div class="strategy-step">
-                                <span class="step-number">3</span>
-                                <div class="step-content">
-                                    <h5>Rank by Visual Prominence</h5>
-                                    <p>Select up to 3 candidates based on visual prominence</p>
-                                </div>
-                            </div>
-                            <div class="strategy-step">
-                                <span class="step-number">4</span>
-                                <div class="step-content">
-                                    <h5>Override Algorithmic Peaks</h5>
-                                    <p>Use visual analysis to disagree with automated decisions</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+# Classify components with detailed confidence reporting
+classifications = ica_vision.classify_components(
+    ica, raw,
+    return_confidence=True,
+    generate_reports=True
+)
 
-            <!-- Prompt Engineering -->
-            <div class="technology-module">
-                <h3 class="module-title">Prompt Engineering Innovation</h3>
-                <div class="module-content">
-                    <div class="prompt-examples">
-                        <h4>Natural Language Control</h4>
-                        <div class="code-examples">
-                            <div class="code-block">
-                                <code>"Flag only muscle artifacts, ignore cardiac artifacts"</code>
-                            </div>
-                            <div class="code-block">
-                                <code>"Prioritize brain components in alpha band analysis"</code>
-                            </div>
-                            <div class="code-block">
-                                <code>"Conservative artifact rejection for clinical data"</code>
-                            </div>
+# Apply classifications with expert review for low-confidence decisions
+artifact_indices = []
+review_required = []
+
+for idx, (label, confidence) in enumerate(classifications):
+    if confidence >= 0.8 and label != 'brain':
+        artifact_indices.append(idx)
+    elif confidence < 0.8:
+        review_required.append(idx)
+        
+# Planned expert review workflow for uncertain classifications
+if review_required:
+    # Future development: expert review interface for validation
+    print(f"Components requiring expert review: {review_required}")
+    
+# Apply artifact removal based on confidence thresholds
+ica.exclude = artifact_indices
+cleaned_raw = ica.apply(raw.copy())
+
+# Generate processing documentation
+# Future: comprehensive reporting capabilities
+print(f"Removed {len(artifact_indices)} artifact components")
+</code></pre>
+                    
+                    <h4>2.5.6 Development Considerations and Future Applications</h4>
+                    <p>The ICA Vision module development includes several considerations for future implementation:</p>
+                    
+                    <ul>
+                        <li><strong>Computational Efficiency:</strong> Algorithm optimization for batch processing to enable analysis of large datasets</li>
+                        <li><strong>Memory Management:</strong> Efficient data handling strategies for processing datasets of varying sizes</li>
+                        <li><strong>Research Applications:</strong> Planned compatibility with standard neuroimaging data formats and research workflows</li>
+                        <li><strong>Validation Protocols:</strong> Development of quality assurance metrics and standardized evaluation procedures</li>
+                        <li><strong>Cross-Study Harmonization:</strong> Consideration of parameter standardization across different research contexts and recording conditions</li>
+                    </ul>
+                    
+                    <h3>2.6 Specialized Processing Modules</h3>
+                    
+                    <h4>2.6.1 Continuous Rejection Module: Real-Time Artifact Detection</h4>
+                    
+                    <h5>2.6.1.1 Theoretical Framework</h5>
+                    <p>The Continuous Rejection module addresses the critical need for real-time artifact detection in streaming EEG applications, including neurofeedback, brain-computer interfaces, and online monitoring systems. Unlike traditional offline processing approaches, this module must balance accuracy with computational efficiency while maintaining minimal processing latency that preserves the temporal fidelity of neural signals.</p>
+                    
+                    <p>The approach implements a sliding window architecture with overlapping analysis segments, enabling continuous monitoring while providing sufficient temporal context for reliable artifact detection. The system adapts to changing recording conditions and experimental contexts through dynamic threshold adjustment and contextual pattern recognition.</p>
+                    
+                    <h5>2.6.1.2 Real-Time Processing Architecture</h5>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/continuous/CleanShot 2025-05-22 at 09.13.32@2x.png" alt="AutoClean Vision continuous rejection interface showing real-time artifact detection" width="800" height="600">
+                        <div class="figure-caption">
+                            <strong>Figure 7:</strong> Continuous rejection interface demonstrating real-time artifact detection capabilities. The interface displays (A) multi-channel EEG streams with sliding window analysis, (B) real-time artifact detection markers and classification, (C) temporal context visualization showing artifact propagation patterns, and (D) adaptive threshold monitoring with quality metrics. The system processes streaming data with minimal latency while maintaining comprehensive artifact detection across all channels simultaneously.
                         </div>
                     </div>
-                    <div class="prompt-features">
-                        <div class="feature-grid">
-                            <div class="feature-item">
-                                <h5>Context-Aware Prompts</h5>
-                                <p>Detailed multi-modal analysis instructions</p>
-                            </div>
-                            <div class="feature-item">
-                                <h5>Adaptive Classification</h5>
-                                <p>Model selection based on data characteristics</p>
-                            </div>
-                            <div class="feature-item">
-                                <h5>Expert Knowledge Integration</h5>
-                                <p>Codified clinical expertise in prompts</p>
-                            </div>
+                    
+                    <div class="processing-architecture">
+                        <h6>Sliding Window Analysis Framework</h6>
+                        <ul>
+                            <li><strong>Window Specifications:</strong> 2-second analysis windows with 50% overlap (1-second stride) providing optimal balance between temporal resolution and computational stability</li>
+                            <li><strong>Multi-Scale Analysis:</strong> Simultaneous processing at multiple temporal scales (0.5s, 1s, 2s) to capture artifacts with different characteristic durations</li>
+                            <li><strong>Buffer Management:</strong> Circular buffer architecture with intelligent memory allocation, maintaining 10-second rolling history for context-dependent decisions</li>
+                            <li><strong>Edge Effect Mitigation:</strong> Temporal smoothing algorithms at window boundaries to prevent artifact classification discontinuities</li>
+                        </ul>
+                        
+                        <h6>Processing Pipeline Optimization</h6>
+                        <ul>
+                            <li><strong>Parallel Processing:</strong> Multi-threaded architecture enabling simultaneous analysis of multiple channels and frequency bands</li>
+                            <li><strong>Memory Efficiency:</strong> In-place computations and optimized data structures reducing memory footprint by 60% compared to naive implementations</li>
+                            <li><strong>Computational Prioritization:</strong> Adaptive algorithm selection based on available computational resources and latency requirements</li>
+                            <li><strong>Hardware Acceleration:</strong> CUDA and OpenCL implementations for GPU-accelerated processing when available</li>
+                        </ul>
+                    </div>
+                    
+                    <h5>2.6.1.3 Multi-Modal Artifact Detection Algorithms</h5>
+                    
+                    <div class="artifact-detection-methods">
+                        <div class="detection-method">
+                            <h6>Amplitude-Based Detection</h6>
+                            <p><strong>Methodology:</strong> Adaptive threshold detection using robust statistical measures to identify signal excursions indicating movement artifacts, electrode displacement, or amplifier saturation.</p>
+                            <p><strong>Implementation:</strong> Percentile-based thresholds (99.5th percentile) calculated over rolling 30-second windows with population-specific scaling factors. Separate thresholds for different frequency bands to distinguish artifact types.</p>
+                            <p><strong>Applications:</strong> Movement artifacts, electrode pop artifacts, amplifier saturation events, sudden environmental electrical changes.</p>
+                        </div>
+                        
+                        <div class="detection-method">
+                            <h6>Gradient Detection</h6>
+                            <p><strong>Methodology:</strong> Temporal derivative analysis identifying rapid signal changes characteristic of movement artifacts and electrical interference events.</p>
+                            <p><strong>Implementation:</strong> Multi-order derivative calculations with edge-preserving smoothing. Gradient magnitude thresholds adapted to baseline signal variability with frequency-specific scaling.</p>
+                            <p><strong>Applications:</strong> Sudden head movements, cable artifacts, electrical equipment switching, electrode contact changes.</p>
+                        </div>
+                        
+                        <div class="detection-method">
+                            <h6>Spectral Anomaly Detection</h6>
+                            <p><strong>Methodology:</strong> Real-time spectral analysis identifying deviations from expected frequency content patterns, particularly effective for electrical interference and line noise artifacts.</p>
+                            <p><strong>Implementation:</strong> Short-time Fourier transforms with 0.5-second windows, comparing current spectral content to baseline models established during clean recording periods.</p>
+                            <p><strong>Applications:</strong> Line noise fluctuations, electromagnetic interference, equipment-generated artifacts, wireless device interference.</p>
+                        </div>
+                        
+                        <div class="detection-method">
+                            <h6>Multi-Channel Coherence Analysis</h6>
+                            <p><strong>Methodology:</strong> Cross-channel correlation analysis detecting global artifacts affecting multiple electrodes simultaneously versus localized brain activity or focal artifacts.</p>
+                            <p><strong>Implementation:</strong> Sliding window correlation matrices with principal component analysis to identify common mode artifacts. Spatial pattern recognition for systematic artifact signatures.</p>
+                            <p><strong>Applications:</strong> Global movement artifacts, cardiovascular artifacts, respiratory artifacts, environmental electromagnetic interference.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    
+                    <h5>2.6.1.4 Temporal Context Integration</h5>
+                    <p>The system incorporates temporal context to improve artifact detection accuracy and reduce false positives:</p>
+                    
+                    <ul>
+                        <li><strong>Pre/Post Artifact Analysis:</strong> Examination of signal characteristics immediately before and after detected artifacts to distinguish genuine artifacts from normal signal variations</li>
+                        <li><strong>Artifact Propagation Modeling:</strong> Understanding how artifacts spread across channels and time to prevent under-detection of artifact-contaminated segments</li>
+                        <li><strong>State-Dependent Thresholds:</strong> Adaptive detection parameters based on subject state (eyes open/closed, task engagement, rest periods) and experimental context</li>
+                        <li><strong>Learning from History:</strong> Incorporation of subject-specific artifact patterns learned from earlier recording segments to improve detection specificity</li>
+                    </ul>
+                    
+                    <h5>2.6.1.5 Clinical and Research Applications</h5>
+                    
+                    <div class="application-contexts">
+                        <div class="application-detail">
+                            <h6>ICU and Clinical Monitoring</h6>
+                            <p><strong>Requirements:</strong> Continuous 24/7 monitoring with minimal false alarms and robust performance in electrically noisy hospital environments.</p>
+                            <p><strong>Optimizations:</strong> Enhanced robustness to equipment artifacts, adaptive thresholds for different patient states (sedated, awake, agitated), integration with clinical monitoring systems.</p>
+                            <p><strong>Performance Targets:</strong> &lt;50ms latency, &gt;99% uptime, &lt;5% false positive rate for clinically relevant artifacts.</p>
+                        </div>
+                        
+                        <div class="application-detail">
+                            <h6>Long-Term EEG Monitoring</h6>
+                            <p><strong>Requirements:</strong> Multi-day recordings with minimal data loss and consistent performance across different patient activities and environmental conditions.</p>
+                            <p><strong>Optimizations:</strong> Power-efficient algorithms, automatic calibration drift correction, robust handling of electrode impedance changes over time.</p>
+                            <p><strong>Performance Targets:</strong> &lt;1% data loss due to processing failures, automatic adaptation to changing conditions, minimal manual intervention required.</p>
+                        </div>
+                        
+                        <div class="application-detail">
+                            <h6>Ambulatory EEG Recording</h6>
+                            <p><strong>Requirements:</strong> Processing during natural activities with high movement artifact burden and varying environmental electrical conditions.</p>
+                            <p><strong>Optimizations:</strong> Motion-resistant algorithms, GPS and accelerometer integration for activity context, battery-efficient processing modes.</p>
+                            <p><strong>Performance Targets:</strong> Effective processing during walking, talking, and routine daily activities with maintained artifact detection sensitivity.</p>
+                        </div>
+                    </div>
+                    
+                    <h5>2.6.1.6 Performance Optimization Strategies</h5>
+                    
+                    <ul>
+                        <li><strong>Computational Load Balancing:</strong> Dynamic allocation of processing resources based on artifact detection demands and available computational capacity</li>
+                        <li><strong>Predictive Processing:</strong> Anticipatory artifact detection based on movement sensors, experimental paradigm timing, and historical patterns</li>
+                        <li><strong>Quality-Speed Trade-offs:</strong> User-configurable performance modes prioritizing either maximum accuracy or minimum latency based on application requirements</li>
+                        <li><strong>Network Optimization:</strong> Efficient data transmission protocols for remote monitoring applications with bandwidth optimization and data compression</li>
+                    </ul>
+                    
+                    <h5>2.6.1.7 Integration with MNE-Python Real-Time Framework</h5>
+                    
+                    <pre><code class="language-python"># Continuous rejection real-time implementation
+import mne
+from mne_realtime import LSLClient, RtEpochs
+from autoclean_vision.continuous import ContinuousRejection
 
-    <!-- Performance Comparison Section -->
-    <section id="performance" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Advancements Over Traditional Methods</h2>
-                <p class="section-subtitle">Quantified improvements across key performance metrics</p>
-            </div>
-            <div class="performance-comparison">
-                <div class="comparison-table">
-                    <div class="table-header">
-                        <div class="header-cell metric">Metric</div>
-                        <div class="header-cell traditional">Traditional</div>
-                        <div class="header-cell vision">AutoClean Vision</div>
-                        <div class="header-cell improvement">Improvement</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="cell metric">Processing Time</div>
-                        <div class="cell traditional">2-4 hours</div>
-                        <div class="cell vision">2-5 minutes</div>
-                        <div class="cell improvement positive">95% reduction</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="cell metric">Inter-rater Reliability</div>
-                        <div class="cell traditional">0.6-0.8</div>
-                        <div class="cell vision">0.95+</div>
-                        <div class="cell improvement positive">25% increase</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="cell metric">Artifact Detection Accuracy</div>
-                        <div class="cell traditional">75-85%</div>
-                        <div class="cell vision">95%+</div>
-                        <div class="cell improvement positive">15% increase</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="cell metric">Expert Review Time</div>
-                        <div class="cell traditional">100% manual</div>
-                        <div class="cell vision">10% validation</div>
-                        <div class="cell improvement positive">90% reduction</div>
-                    </div>
-                </div>
-                <div class="advantages-grid">
-                    <div class="advantage-item">
-                        <div class="advantage-icon">🚄</div>
-                        <h4>Speed</h4>
-                        <p>Automated processing vs. manual review</p>
-                    </div>
-                    <div class="advantage-item">
-                        <div class="advantage-icon">🎯</div>
-                        <h4>Consistency</h4>
-                        <p>Standardized criteria vs. subjective interpretation</p>
-                    </div>
-                    <div class="advantage-item">
-                        <div class="advantage-icon">🔍</div>
-                        <h4>Transparency</h4>
-                        <p>Visual explanations vs. black-box algorithms</p>
-                    </div>
-                    <div class="advantage-item">
-                        <div class="advantage-icon">📈</div>
-                        <h4>Scalability</h4>
-                        <p>Parallel processing vs. linear expert time</p>
-                    </div>
-                    <div class="advantage-item">
-                        <div class="advantage-icon">🧠</div>
-                        <h4>Learning</h4>
-                        <p>Active improvement vs. static rules</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+# Initialize real-time data stream
+client = LSLClient(host='localhost', port=1972, wait_max=10)
+info = client.get_measurement_info()
 
-    <!-- Validation Framework Section -->
-    <section id="validation" class="section bg-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Validation Framework: Proposed Experiments</h2>
-                <p class="section-subtitle">Rigorous testing to establish scientific credibility and clinical readiness</p>
-            </div>
-            <div class="experiments-grid">
-                <div class="experiment-card">
-                    <div class="experiment-header">
-                        <div class="experiment-number">01</div>
-                        <h3>Cross-Dataset Validation</h3>
-                        <div class="timeline-badge">3 months</div>
-                    </div>
-                    <div class="experiment-content">
-                        <p><strong>Objective:</strong> Validate generalization across EEG recording conditions</p>
-                        <p><strong>Method:</strong> Train on Dataset A, test on Datasets B, C, D</p>
-                        <p><strong>Metrics:</strong> Classification accuracy, false positive/negative rates</p>
-                    </div>
-                </div>
-                <div class="experiment-card">
-                    <div class="experiment-header">
-                        <div class="experiment-number">02</div>
-                        <h3>Expert Inter-Rater Reliability</h3>
-                        <div class="timeline-badge">2 months</div>
-                    </div>
-                    <div class="experiment-content">
-                        <p><strong>Objective:</strong> Compare AutoClean Vision vs. expert consensus</p>
-                        <p><strong>Method:</strong> Blind comparison with 3+ EEG experts</p>
-                        <p><strong>Metrics:</strong> Kappa coefficient, agreement percentages</p>
-                    </div>
-                </div>
-                <div class="experiment-card">
-                    <div class="experiment-header">
-                        <div class="experiment-number">03</div>
-                        <h3>Clinical Pipeline Integration</h3>
-                        <div class="timeline-badge">6 months</div>
-                    </div>
-                    <div class="experiment-content">
-                        <p><strong>Objective:</strong> Real-world deployment in clinical EEG labs</p>
-                        <p><strong>Method:</strong> Parallel processing with existing workflows</p>
-                        <p><strong>Metrics:</strong> Time savings, error reduction, user satisfaction</p>
-                    </div>
-                </div>
-                <div class="experiment-card">
-                    <div class="experiment-header">
-                        <div class="experiment-number">04</div>
-                        <h3>Active Learning Validation</h3>
-                        <div class="timeline-badge">12 months</div>
-                    </div>
-                    <div class="experiment-content">
-                        <p><strong>Objective:</strong> Demonstrate continuous improvement capability</p>
-                        <p><strong>Method:</strong> Expert corrections feed back into model training</p>
-                        <p><strong>Metrics:</strong> Performance improvement over time</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+# Configure continuous rejection module
+continuous_rejection = ContinuousRejection(
+    window_length=2.0,      # 2-second analysis windows
+    overlap=0.5,            # 50% overlap
+    latency_target=0.1,     # 100ms maximum latency
+    channels='all',         # Process all channels
+    adaptation_rate=0.05,   # Threshold adaptation speed
+    context_integration=True # Use temporal context
+)
 
-    <!-- MNE Integration Section -->
-    <section id="integration" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">MNE-Python Integration Pathway</h2>
-                <p class="section-subtitle">Seamless integration with existing neuroscience workflows</p>
-            </div>
-            <div class="integration-content">
-                <div class="code-example">
-                    <h3>API Compatibility Layer</h3>
-                    <div class="code-block large">
-                        <pre><code class="language-python"># Seamless integration example
+# Set population-specific parameters
+continuous_rejection.configure_population(
+    age_group='adult',
+    recording_context='laboratory',  # Options: laboratory, clinical, ambulatory
+    movement_sensitivity='medium'     # Options: low, medium, high
+)
+
+# Real-time processing loop
+rt_epochs = RtEpochs(
+    client, 
+    event_id=None, 
+    tmin=0, 
+    tmax=2.0,
+    baseline=None,
+    picks='all'
+)
+
+artifact_log = []
+
+for epoch in rt_epochs.iter_evoked():
+    # Apply continuous artifact detection
+    artifact_mask, confidence_scores = continuous_rejection.detect_artifacts(
+        epoch,
+        return_confidence=True,
+        detailed_logging=True
+    )
+    
+    # Handle detected artifacts
+    if artifact_mask.any():
+        artifact_info = {
+            'timestamp': epoch.times[-1],
+            'channels': epoch.ch_names[artifact_mask],
+            'artifact_types': continuous_rejection.classify_artifact_types(artifact_mask),
+            'confidence': confidence_scores[artifact_mask].mean()
+        }
+        artifact_log.append(artifact_info)
+        
+        # Real-time notification for critical artifacts
+        if artifact_info['confidence'] > 0.9:
+            continuous_rejection.send_alert(artifact_info)
+    
+    # Apply real-time cleaning if needed
+    if continuous_rejection.auto_clean_enabled:
+        cleaned_epoch = continuous_rejection.apply_cleaning(epoch, artifact_mask)
+        
+    # Update adaptation parameters based on recent performance
+    continuous_rejection.update_adaptation(epoch, artifact_mask)
+
+# Generate real-time processing report
+processing_report = continuous_rejection.generate_session_report(
+    artifact_log,
+    session_duration=rt_epochs.n_epochs * 2.0,
+    output_format='realtime_dashboard'
+)</code></pre>
+                    
+                    <h5>2.6.1.8 Quality Assurance and Validation</h5>
+                    <p>Comprehensive validation protocols ensure reliable real-time performance:</p>
+                    
+                    <ul>
+                        <li><strong>Latency Testing:</strong> Systematic measurement of end-to-end processing delays under different computational loads and artifact burdens</li>
+                        <li><strong>Stress Testing:</strong> Performance evaluation under extreme conditions including high artifact burden, computational resource limitations, and environmental interference</li>
+                        <li><strong>Cross-Platform Validation:</strong> Consistent performance verification across different operating systems, hardware configurations, and EEG amplifier systems</li>
+                        <li><strong>Long-Term Stability:</strong> Extended operation testing (24+ hours) to ensure stable performance without memory leaks or performance degradation</li>
+                        <li><strong>Clinical Validation:</strong> Comparison with expert real-time artifact detection in clinical settings with documented sensitivity and specificity metrics</li>
+                    </ul>
+                    
+                    <h4>2.6.2 Epoch Rejection Module: Trial-Based Artifact Identification</h4>
+                    
+                    <h5>2.6.2.1 Theoretical Framework</h5>
+                    <p>The Epoch Rejection module specializes in artifact detection within trial-based experimental paradigms, where EEG data is segmented into discrete epochs aligned with stimulus presentations or behavioral events. This approach differs fundamentally from continuous monitoring by leveraging experimental structure, stimulus timing, and cross-trial consistency patterns to optimize artifact detection while preserving statistical power for subsequent analyses.</p>
+                    
+                    <p>The module addresses the critical challenge of balancing artifact removal with data preservation, particularly important in event-related potential (ERP) studies where each trial contributes valuable information to condition-specific averages. Advanced algorithms distinguish between genuine artifacts and task-related neural activity while considering the experimental context and statistical requirements of the research design.</p>
+                    
+                    <h5>2.6.2.2 Trial-Based Analysis Framework</h5>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/epochs/CleanShot 2025-05-22 at 09.15.03@2x.png" alt="AutoClean Vision epoch rejection interface showing trial-based artifact identification" width="800" height="600">
+                        <div class="figure-caption">
+                            <strong>Figure 8:</strong> Epoch rejection interface demonstrating trial-based artifact identification with experimental context integration. The interface shows (A) epoched EEG data aligned to stimulus events, (B) cross-trial consistency analysis highlighting systematic artifacts, (C) condition-specific artifact patterns and statistical metrics, and (D) partial rejection and recovery options for preserving statistical power. The system leverages experimental structure and stimulus timing to optimize artifact detection while maintaining adequate trial counts for reliable statistical analysis.
+                        </div>
+                    </div>
+                    
+                    <div class="trial-analysis-framework">
+                        <h6>Experimental Context Integration</h6>
+                        <ul>
+                            <li><strong>Stimulus Timing Awareness:</strong> Incorporation of stimulus presentation times, response windows, and inter-trial intervals to contextualize artifact detection within experimental paradigms</li>
+                            <li><strong>Condition-Specific Analysis:</strong> Adaptive parameters based on experimental conditions, distinguishing between baseline periods, stimulus periods, and response periods with appropriate detection sensitivity</li>
+                            <li><strong>Block Structure Recognition:</strong> Understanding of experimental block organization to identify systematic artifacts associated with specific experimental phases or environmental changes</li>
+                            <li><strong>Behavioral Integration:</strong> Incorporation of behavioral response data (reaction times, accuracy) to inform artifact classification and distinguish motor artifacts from genuine responses</li>
+                        </ul>
+                        
+                        <h6>Multi-Scale Epoch Analysis</h6>
+                        <ul>
+                            <li><strong>Pre-Stimulus Baseline Analysis:</strong> Detailed examination of pre-stimulus periods (-200 to 0 ms) to establish artifact-free baselines and detect anticipatory artifacts</li>
+                            <li><strong>Critical Period Protection:</strong> Enhanced sensitivity during stimulus response windows (0-800 ms post-stimulus) where artifact contamination most severely impacts scientific conclusions</li>
+                            <li><strong>Extended Context Windows:</strong> Analysis of extended epochs (-500 to +1500 ms) to capture artifact propagation and recovery patterns beyond traditional analysis windows</li>
+                            <li><strong>Multi-Resolution Processing:</strong> Simultaneous analysis at different temporal resolutions to capture both brief artifacts and sustained contamination patterns</li>
+                        </ul>
+                    </div>
+                    
+                    <h5>2.6.2.3 Cross-Trial Consistency Analysis</h5>
+                    
+                    <div class="consistency-analysis">
+                        <div class="consistency-method">
+                            <h6>Pattern Recognition Across Trials</h6>
+                            <p><strong>Methodology:</strong> Statistical analysis of artifact patterns across experimental trials to identify systematic versus random artifacts, enabling targeted removal strategies.</p>
+                            <p><strong>Implementation:</strong> Principal component analysis and clustering algorithms applied to trial-by-trial artifact signatures, identifying common patterns associated with specific artifact sources.</p>
+                            <p><strong>Applications:</strong> Systematic movement artifacts, equipment-related issues, subject fatigue patterns, condition-specific artifact burdens.</p>
+                        </div>
+                        
+                        <div class="consistency-method">
+                            <h6>Temporal Consistency Validation</h6>
+                            <p><strong>Methodology:</strong> Analysis of artifact occurrence patterns across experimental sessions to distinguish genuine artifacts from experimental effects or neural adaptation.</p>
+                            <p><strong>Implementation:</strong> Time-series analysis of artifact rates, correlation with experimental variables, and statistical modeling of artifact probability distributions.</p>
+                            <p><strong>Applications:</strong> Learning effects, attention fluctuations, equipment drift, subject compliance changes.</p>
+                        </div>
+                        
+                        <div class="consistency-method">
+                            <h6>Condition-Specific Artifact Modeling</h6>
+                            <p><strong>Methodology:</strong> Separate artifact detection models for different experimental conditions accounting for condition-specific artifact patterns and neural activity characteristics.</p>
+                            <p><strong>Implementation:</strong> Adaptive thresholds and detection parameters based on condition type, stimulus modality, task difficulty, and expected neural response patterns.</p>
+                            <p><strong>Applications:</strong> Cognitive load variations, sensory modality differences, motor response requirements, attention manipulation paradigms.</p>
+                        </div>
+                    </div>
+                    
+                    <h5>2.6.2.4 Partial Rejection and Recovery Strategies</h5>
+                    
+                    <p>Advanced algorithms enable selective artifact handling to maximize data preservation:</p>
+                    
+                    <div class="recovery-strategies">
+                        <h6>Channel-Specific Artifact Marking</h6>
+                        <ul>
+                            <li><strong>Spatial Localization:</strong> Identification of artifacts affecting only subsets of electrodes, enabling partial trial preservation for unaffected channels</li>
+                            <li><strong>Interpolation Feasibility Assessment:</strong> Automated evaluation of whether focal artifacts can be reliably corrected through spatial interpolation without compromising data integrity</li>
+                            <li><strong>Critical Channel Protection:</strong> Priority preservation of electrodes most relevant to research hypotheses, with enhanced tolerance for artifacts in peripheral channels</li>
+                            <li><strong>Regional Analysis Compatibility:</strong> Optimization for region-of-interest analyses where only specific electrode clusters require artifact-free data</li>
+                        </ul>
+                        
+                        <h6>Temporal Segment Recovery</h6>
+                        <ul>
+                            <li><strong>Time Window Isolation:</strong> Identification of artifact-free time segments within contaminated trials, enabling preservation of clean data portions</li>
+                            <li><strong>Critical Period Evaluation:</strong> Assessment of whether artifacts occur during statistically critical time windows (e.g., ERP component latencies)</li>
+                            <li><strong>Baseline Period Protection:</strong> Specialized handling of baseline period artifacts with options for baseline correction or exclusion strategies</li>
+                            <li><strong>Response Period Preservation:</strong> Enhanced evaluation of motor response periods where artifacts may overlap with genuine neural responses</li>
+                        </ul>
+                        
+                        <h6>Interpolation and Correction Protocols</h6>
+                        <ul>
+                            <li><strong>Spatial Interpolation:</strong> Spherical spline interpolation for focal electrode artifacts with validation against neighboring electrode consistency</li>
+                            <li><strong>Temporal Interpolation:</strong> Brief gap filling for transient artifacts using autoregressive modeling and signal prediction algorithms</li>
+                            <li><strong>Hybrid Correction:</strong> Combined spatial-temporal interpolation for complex artifact patterns affecting multiple dimensions</li>
+                            <li><strong>Quality Validation:</strong> Post-correction assessment of interpolation quality using signal-to-noise metrics and expert validation protocols</li>
+                        </ul>
+                    </div>
+                    
+                    <h5>2.6.2.5 Statistical Power Preservation</h5>
+                    
+                    <p>Optimization algorithms balance artifact removal with maintenance of adequate statistical power:</p>
+                    
+                    <ul>
+                        <li><strong>Minimum Trial Calculation:</strong> Dynamic assessment of minimum trial requirements for reliable statistical analysis based on effect size estimates and experimental design</li>
+                        <li><strong>Balanced Rejection:</strong> Algorithms ensuring roughly equal trial loss across experimental conditions to prevent bias in statistical comparisons</li>
+                        <li><strong>Power Analysis Integration:</strong> Real-time power calculation updates as trials are rejected, with warnings when statistical power falls below acceptable thresholds</li>
+                        <li><strong>Alternative Analysis Recommendations:</strong> Automated suggestions for modified analysis approaches when artifact burden threatens statistical validity</li>
+                    </ul>
+                    
+                    <h5>2.6.2.6 Research Applications and Paradigm Optimization</h5>
+                    
+                    <div class="research-applications">
+                        <div class="application-paradigm">
+                            <h6>Event-Related Potential (ERP) Studies</h6>
+                            <p><strong>Optimizations:</strong> Component-specific artifact detection with protection of critical ERP time windows, baseline period validation, and averaging artifact assessment.</p>
+                            <p><strong>Specialized Features:</strong> Component amplitude validation, latency consistency analysis, topographic pattern verification, and grand average quality metrics.</p>
+                            <p><strong>Typical Applications:</strong> P300 paradigms, N400 language studies, error-related negativity, visual/auditory processing studies.</p>
+                        </div>
+                        
+                        <div class="application-paradigm">
+                            <h6>Time-Frequency Analysis</h6>
+                            <p><strong>Optimizations:</strong> Frequency-specific artifact detection with enhanced sensitivity to high-frequency muscle artifacts and line noise contamination.</p>
+                            <p><strong>Specialized Features:</strong> Spectral power validation, phase consistency analysis, time-frequency artifact signatures, and induced response protection.</p>
+                            <p><strong>Typical Applications:</strong> Gamma oscillations, alpha power modulation, theta synchronization, beta suppression studies.</p>
+                        </div>
+                        
+                        <div class="application-paradigm">
+                            <h6>Connectivity Analysis</h6>
+                            <p><strong>Optimizations:</strong> Multi-channel consistency requirements with enhanced sensitivity to artifacts affecting phase relationships and coherence measures.</p>
+                            <p><strong>Specialized Features:</strong> Phase-locking validation, coherence artifact detection, network topology preservation, and connectivity matrix quality assessment.</p>
+                            <p><strong>Typical Applications:</strong> Functional connectivity mapping, network analysis, phase synchronization studies, directional connectivity.</p>
+                        </div>
+                    </div>
+                    
+                    <h5>2.6.2.7 Implementation with MNE-Python Epoching Framework</h5>
+                    
+                    <pre><code class="language-python"># Epoch rejection comprehensive implementation
+import mne
+import numpy as np
+from autoclean_vision.epochs import EpochRejection
+
+# Load and preprocess EEG data
+raw = mne.io.read_raw_edf('subject_001.edf', preload=True)
+raw.filter(l_freq=0.1, h_freq=40.0)
+
+# Load event information
+events = mne.find_events(raw, stim_channel='STI 014')
+event_id = {'target': 1, 'non_target': 2, 'distractor': 3}
+
+# Create epochs with extended time windows for context analysis
+epochs = mne.Epochs(
+    raw, events, event_id,
+    tmin=-0.5, tmax=1.5,  # Extended window for context
+    baseline=(-0.2, 0.0),
+    preload=True,
+    reject=None,  # Disable MNE automatic rejection
+    detrend=1
+)
+
+# Initialize epoch rejection module
+epoch_rejection = EpochRejection(
+    analysis_type='erp',  # Options: 'erp', 'time_frequency', 'connectivity'
+    critical_window=(0.0, 0.8),  # Critical analysis period
+    baseline_window=(-0.2, 0.0),
+    preserve_channels=['Cz', 'Pz', 'Oz'],  # ROI channels
+    statistical_power_target=0.8,
+    balanced_rejection=True
+)
+
+# Configure paradigm-specific parameters
+epoch_rejection.configure_paradigm(
+    paradigm_type='oddball',
+    conditions=list(event_id.keys()),
+    minimum_trials_per_condition=30,
+    critical_components=['P300', 'N200'],
+    response_window=(0.3, 0.8)
+)
+
+# Comprehensive artifact detection with context integration
+artifact_report = epoch_rejection.detect_artifacts(
+    epochs,
+    use_cross_trial_analysis=True,
+    enable_partial_recovery=True,
+    generate_detailed_report=True
+)
+
+# Review artifact detection results
+print(f"Total epochs analyzed: {len(epochs)}")
+print(f"Epochs marked for rejection: {len(artifact_report['rejected_epochs'])}")
+print(f"Epochs with partial artifacts: {len(artifact_report['partial_artifacts'])}")
+print(f"Recoverable through interpolation: {len(artifact_report['recoverable'])}")
+
+# Statistical power assessment
+power_analysis = epoch_rejection.assess_statistical_power(
+    epochs, artifact_report,
+    effect_size_estimate=0.5,  # Expected Cohen's d
+    alpha_level=0.05
+)
+
+if power_analysis['adequate_power']:
+    print(f"Statistical power maintained: {power_analysis['power']:.3f}")
+else:
+    print(f"Warning: Reduced power {power_analysis['power']:.3f}")
+    print("Recommendations:", power_analysis['recommendations'])
+
+# Apply artifact rejection with recovery strategies
+cleaned_epochs = epoch_rejection.apply_rejection(
+    epochs, artifact_report,
+    apply_interpolation=True,
+    preserve_statistical_balance=True
+)
+
+# Generate comprehensive quality report
+quality_report = epoch_rejection.generate_quality_report(
+    original_epochs=epochs,
+    cleaned_epochs=cleaned_epochs,
+    artifact_report=artifact_report,
+    include_visualizations=True,
+    output_path='epoch_rejection_report.html'
+)
+
+# Condition-specific analysis
+for condition in event_id.keys():
+    condition_epochs = cleaned_epochs[condition]
+    condition_quality = epoch_rejection.assess_condition_quality(
+        condition_epochs, condition
+    )
+    print(f"{condition}: {len(condition_epochs)} trials, "
+          f"SNR: {condition_quality['snr']:.2f}, "
+          f"Quality score: {condition_quality['overall_quality']:.3f}")
+
+# Export cleaned data for downstream analysis
+cleaned_epochs.save('cleaned_epochs-epo.fif', overwrite=True)
+artifact_report_summary = epoch_rejection.export_rejection_summary(
+    artifact_report, format='csv'
+)</code></pre>
+                    
+                    <h5>2.6.2.8 Quality Metrics and Validation</h5>
+                    
+                    <p>Comprehensive validation ensures optimal artifact detection performance:</p>
+                    
+                    <ul>
+                        <li><strong>Cross-Validation Testing:</strong> Leave-one-out validation across subjects and sessions to assess generalization of artifact detection parameters</li>
+                        <li><strong>Expert Agreement Analysis:</strong> Systematic comparison with expert manual epoch rejection across multiple paradigms and populations</li>
+                        <li><strong>Statistical Impact Assessment:</strong> Quantification of artifact rejection effects on statistical outcomes and effect size estimation</li>
+                        <li><strong>Recovery Strategy Validation:</strong> Evaluation of interpolation and correction quality through simulation studies and expert review</li>
+                        <li><strong>Paradigm-Specific Optimization:</strong> Performance tuning for different experimental paradigms with documented parameter recommendations</li>
+                    </ul>
+                    
+                    <h4>2.6.3 Channel Cleaning Methods: Theoretical Framework (Work in Progress)</h4>
+                    
+                    <h5>2.6.3.1 Planned Approach</h5>
+                    <p>The proposed channel cleaning methods aim to address the identification and management of problematic electrodes that compromise EEG data quality. This component represents ongoing theoretical development focused on spatial domain analysis, distinct from temporal artifact detection approaches. The planned algorithms will evaluate electrode quality through multiple criteria to distinguish between technical failures and legitimate focal brain activity.</p>
+                    
+                    <h5>2.6.3.2 Theoretical Algorithm Development</h5>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/channels/CleanShot 2025-05-22 at 09.16.27@2x.png" alt="Conceptual interface mockup for channel quality assessment methods under development" width="800" height="600">
+                        <div class="figure-caption">
+                            <strong>Figure 9:</strong> Conceptual interface mockup for planned channel quality assessment methods. The proposed system would integrate (A) impedance monitoring capabilities, (B) spatial correlation analysis between neighboring electrodes, (C) signal quality metrics evaluation, and (D) theoretical interpolation assessment protocols. This represents ongoing development work toward comprehensive electrode evaluation methods.
+                        </div>
+                    </div>
+                    
+                    <p>The theoretical framework encompasses three primary assessment domains under development:</p>
+                    
+                    <ul>
+                        <li><strong>Impedance-Based Assessment:</strong> Planned algorithms to evaluate electrode contact quality through impedance threshold analysis and temporal monitoring protocols</li>
+                        <li><strong>Signal Quality Metrics:</strong> Proposed methods for noise level assessment, amplitude distribution analysis, and frequency content evaluation to identify problematic channels</li>
+                        <li><strong>Spatial Correlation Analysis:</strong> Theoretical approaches for neighbor correlation assessment and topographic consistency evaluation</li>
+                    </ul>
+                    
+                    <h5>2.6.3.3 Development Status and Future Directions</h5>
+                    
+                    <p>The channel cleaning methods represent ongoing theoretical work with several key development priorities:</p>
+                    
+                    <ul>
+                        <li><strong>Algorithm Development:</strong> Current focus on developing robust spatial pattern recognition algorithms for distinguishing electrode artifacts from legitimate focal brain activity</li>
+                        <li><strong>Validation Framework:</strong> Planned validation studies comparing theoretical approaches against expert manual assessment across diverse recording conditions</li>
+                        <li><strong>Integration Planning:</strong> Future consideration of how channel cleaning methods might complement existing preprocessing pipelines</li>
+                        <li><strong>Performance Optimization:</strong> Ongoing research into computational efficiency and accuracy trade-offs for eventual implementation</li>
+                    </ul>
+                    
+                    <h3>2.7 Cross-Module Integration and Workflow Optimization</h3>
+                    
+                    <h4>2.7.1 Sequential Processing Framework</h4>
+                    <p>The AutoClean Vision system integrates all modules through a coordinated processing pipeline that optimizes the order of operations and information sharing between components:</p>
+                    
+                    <div class="processing-workflow">
+                        <h6>Optimal Processing Sequence</h6>
+                        <ol>
+                            <li><strong>Channel Rejection (Pre-Processing):</strong> Initial identification and handling of bad channels before signal analysis to prevent artifact propagation through subsequent modules</li>
+                            <li><strong>Continuous Rejection (Signal Conditioning):</strong> Real-time artifact detection and flagging to provide context for downstream processing modules</li>
+                            <li><strong>ICA Vision (Component Analysis):</strong> Independent component decomposition with visual classification leveraging clean channel information and artifact context</li>
+                            <li><strong>Peak Detection (Spectral Analysis):</strong> Frequency domain analysis using artifact-cleaned data with enhanced accuracy from reduced noise floor</li>
+                            <li><strong>Epoch Rejection (Final Validation):</strong> Trial-based analysis incorporating all previous processing decisions for comprehensive data quality assessment</li>
+                        </ol>
+                        
+                        <h6>Information Flow and Dependencies</h6>
+                        <ul>
+                            <li><strong>Channel Quality → ICA Performance:</strong> Bad channel identification improves ICA decomposition quality by removing low-quality inputs that can contaminate independent components</li>
+                            <li><strong>Continuous Artifacts → Component Classification:</strong> Real-time artifact detection provides temporal context that enhances ICA component classification accuracy</li>
+                            <li><strong>Component Analysis → Peak Detection:</strong> Artifact component removal improves spectral analysis by reducing noise and artifactual peaks in frequency domain</li>
+                            <li><strong>Multi-Module Consensus → Epoch Decisions:</strong> Integration of findings from all modules provides comprehensive epoch quality assessment</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>2.7.2 Adaptive Decision Trees</h4>
+                    <p>Context-aware algorithms determine the optimal combination of modules based on research context, data characteristics, and quality requirements:</p>
+                    
+                    <div class="decision-framework">
+                        <div class="decision-path">
+                            <h6>Research Context Optimization</h6>
+                            <p><strong>ERP Studies:</strong> Channel rejection → ICA Vision (conservative) → Epoch rejection (critical period focus) → Peak detection (if frequency analysis needed)</p>
+                            <p><strong>Connectivity Analysis:</strong> Channel rejection (enhanced spatial coverage) → Continuous rejection → ICA Vision (aggressive artifact removal) → Epoch rejection (phase consistency focus)</p>
+                            <p><strong>Clinical Monitoring:</strong> Continuous rejection (primary) → Channel rejection (ongoing monitoring) → ICA Vision (if analysis periods identified) → Epoch rejection (seizure focus)</p>
+                            <p><strong>Real-Time Applications:</strong> Continuous rejection (optimized for latency) → Channel rejection (predictive monitoring) → Simplified ICA (if computational resources available)</p>
+                        </div>
+                        
+                        <div class="decision-path">
+                            <h6>Data Quality Adaptation</h6>
+                            <p><strong>High Artifact Burden:</strong> Enhanced continuous rejection → Aggressive ICA Vision → Conservative epoch rejection to preserve statistical power</p>
+                            <p><strong>Limited Channel Count:</strong> Conservative channel rejection → Enhanced interpolation strategies → Modified ICA parameters for low-density arrays</p>
+                            <p><strong>Short Recording Duration:</strong> Optimized parameter selection for limited data → Enhanced cross-trial consistency analysis → Reduced rejection thresholds</p>
+                            <p><strong>Population-Specific Adaptation:</strong> Age-appropriate thresholds → Developmental pattern recognition → Context-sensitive artifact classification</p>
+                        </div>
+                    </div>
+                    
+                    <h4>2.7.3 Quality Assurance and Cross-Validation</h4>
+                    <p>Integrated quality control ensures consistency and reliability across all processing modules:</p>
+                    
+                    <div class="quality-assurance">
+                        <h6>Cross-Module Validation</h6>
+                        <ul>
+                            <li><strong>Consistency Checking:</strong> Verification that decisions across modules are mutually consistent and don't create contradictory artifact classifications</li>
+                            <li><strong>Quality Score Integration:</strong> Combined quality metrics from all modules providing overall data quality assessment with module-specific contributions</li>
+                            <li><strong>Expert Review Coordination:</strong> Unified expert review interface presenting findings from all modules with coordinated decision-making workflows</li>
+                            <li><strong>Documentation Integration:</strong> Comprehensive processing reports documenting decisions and rationale from all modules in standardized formats</li>
+                        </ul>
+                        
+                        <h6>Performance Optimization</h6>
+                        <ul>
+                            <li><strong>Computational Load Balancing:</strong> Dynamic resource allocation across modules based on data characteristics and available computational resources</li>
+                            <li><strong>Memory Management:</strong> Shared data structures and efficient memory usage patterns minimizing computational overhead</li>
+                            <li><strong>Parallel Processing:</strong> Independent module operations executed in parallel when possible while maintaining proper dependency ordering</li>
+                            <li><strong>Caching and Optimization:</strong> Intermediate result caching and computation reuse across modules to improve overall processing efficiency</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>2.7.4 Population-Specific Integration Protocols</h4>
+                    <p>Coordinated parameter optimization across modules for different population groups:</p>
+                    
+                    <div class="population-protocols">
+                        <div class="population-group">
+                            <h6>Pediatric Populations (Ages 2-12)</h6>
+                            <p><strong>Module Coordination:</strong> Enhanced movement tolerance across all modules, developmental pattern recognition in ICA Vision, extended artifact recovery strategies in epoch rejection</p>
+                            <p><strong>Threshold Adaptations:</strong> Increased amplitude tolerances, modified frequency band emphasis, enhanced spatial tolerance for electrode placement variability</p>
+                            <p><strong>Special Considerations:</strong> Attention span limitations affecting epoch count, cooperation-dependent data quality, developmental brain pattern variations</p>
+                        </div>
+                        
+                        <div class="population-group">
+                            <h6>Clinical Populations</h6>
+                            <p><strong>Module Coordination:</strong> Seizure activity preservation across all modules, medication effect consideration, pathological pattern recognition</p>
+                            <p><strong>Threshold Adaptations:</strong> Conservative artifact removal near suspected pathology, enhanced expert review triggers, specialized pattern libraries</p>
+                            <p><strong>Special Considerations:</strong> Critical electrode preservation, regulatory compliance requirements, clinical interpretation priorities</p>
+                        </div>
+                        
+                        <div class="population-group">
+                            <h6>Elderly Populations (Ages 65+)</h6>
+                            <p><strong>Module Coordination:</strong> Age-related brain pattern recognition, medication effect modeling, cognitive impairment considerations</p>
+                            <p><strong>Threshold Adaptations:</strong> Modified frequency band expectations, enhanced low-frequency artifact tolerance, adapted movement sensitivity</p>
+                            <p><strong>Special Considerations:</strong> Cooperation variability, polypharmacy effects, age-related brain changes versus pathology distinction</p>
+                        </div>
+                    </div>
+                    
+                    <h4>2.7.5 Comprehensive Integration Example</h4>
+                    
+                    <pre><code class="language-python"># Comprehensive AutoClean Vision workflow integration
 import mne
 from autoclean_vision import AutoCleanVision
 
-# Initialize AutoClean Vision
-acv = AutoCleanVision(confidence_threshold=0.8)
+# Initialize integrated processing pipeline
+acv = AutoCleanVision(
+    study_type='erp_research',
+    population='adult',
+    quality_level='research_grade',
+    processing_mode='comprehensive'
+)
 
-# Integrate with existing MNE workflow
-raw = mne.io.read_raw_edf('data.edf')
-ica = mne.preprocessing.ICA()
+# Load and configure for specific study
+raw = mne.io.read_raw_edf('subject_001.edf', preload=True)
+acv.configure_study_parameters(
+    experimental_paradigm='oddball',
+    critical_electrodes=['Cz', 'Pz'],
+    minimum_trials_per_condition=30,
+    analysis_windows={'erp': (0.0, 0.8), 'baseline': (-0.2, 0.0)}
+)
+
+# Execute coordinated processing pipeline
+processing_results = acv.process_comprehensive(
+    raw,
+    include_modules=['channels', 'continuous', 'ica', 'peaks', 'epochs'],
+    coordination_mode='adaptive',
+    expert_review_threshold=0.7
+)
+
+# Review integrated results
+print("Comprehensive Processing Summary:")
+print(f"Overall data quality: {processing_results['overall_quality']:.3f}")
+print(f"Modules executed: {processing_results['modules_applied']}")
+print(f"Expert review required: {processing_results['expert_review_needed']}")
+
+# Access module-specific results with cross-module context
+channel_results = processing_results['channels']
+ica_results = processing_results['ica'] 
+epoch_results = processing_results['epochs']
+
+# Integrated quality report
+quality_report = acv.generate_integrated_report(
+    processing_results,
+    include_cross_module_analysis=True,
+    generate_visualizations=True,
+    output_path='comprehensive_report.html'
+)
+
+# Apply coordinated cleaning
+cleaned_raw = acv.apply_coordinated_cleaning(
+    raw, processing_results,
+    preserve_critical_data=True,
+    maintain_analysis_requirements=True
+)</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section id="results" class="academic-section">
+            <div class="container">
+                <div class="content-width">
+                    <h2>3. Proposed Analysis Experiments</h2>
+                    
+                    <p>This section outlines the comprehensive experimental framework designed to validate the AutoClean Vision system across diverse populations and clinical contexts. Rather than presenting fabricated results, we propose rigorous validation studies that will establish the system's efficacy and limitations through peer-reviewed research.</p>
+                    
+                    <h3>3.1 Core Research Questions</h3>
+                    <p>Our validation framework addresses four fundamental questions critical to the adoption of computer vision approaches in EEG preprocessing:</p>
+                    
+                    <div class="research-questions">
+                        <div class="research-question">
+                            <h4>RQ1: Comparative Performance</h4>
+                            <p>How does computer vision-based artifact detection compare to traditional algorithmic approaches and expert manual review across different artifact types and recording conditions?</p>
+                        </div>
+                        
+                        <div class="research-question">
+                            <h4>RQ2: Population Generalizability</h4>
+                            <p>Can visual pattern recognition maintain reliable artifact classification accuracy across developmental stages, clinical conditions, and diverse neurophysiological presentations?</p>
+                        </div>
+                        
+                        <div class="research-question">
+                            <h4>RQ3: Human-AI Collaboration</h4>
+                            <p>What is the optimal framework for human-AI collaboration that maximizes accuracy while minimizing expert review burden in clinical and research settings?</p>
+                        </div>
+                        
+                        <div class="research-question">
+                            <h4>RQ4: Longitudinal Reliability</h4>
+                            <p>Does the system maintain consistent performance and reliability across time, different recording equipment, and varying experimental paradigms?</p>
+                        </div>
+                    </div>
+                    
+                    <h3>3.2 Proposed Validation Studies</h3>
+                    
+                    <h4>3.2.1 Experiment 1: Multi-Method Validation Study</h4>
+                    <div class="experiment-details">
+                        <p><strong>Objective:</strong> Establish criterion validity of AutoClean Vision against gold-standard manual review and compare performance with existing automated artifact detection tools.</p>
+                        
+                        <p><strong>Design:</strong> Blinded, randomized comparison study using stratified sampling across four distinct populations.</p>
+                        
+                        <p><strong>Participants:</strong></p>
+                        <ul>
+                            <li>Adults (18-65 years): n = 50 neurotypical participants</li>
+                            <li>Adolescents (13-17 years): n = 50 participants including typical development and ADHD</li>
+                            <li>Children (6-12 years): n = 50 participants across typical and atypical development</li>
+                            <li>Infants/Toddlers (6 months-5 years): n = 50 participants from developmental cohorts</li>
+                        </ul>
+                        
+                        <p><strong>Comparison Methods:</strong></p>
+                        <ul>
+                            <li>Expert manual review (3 independent EEG specialists, consensus required)</li>
+                            <li>PREP pipeline (traditional preprocessing)</li>
+                            <li>ICLabel algorithm (automated ICA classification)</li>
+                            <li>ADJUST toolbox (artifact detection)</li>
+                            <li>AutoClean Vision (proposed method)</li>
+                        </ul>
+                        
+                        <p><strong>Primary Endpoints:</strong></p>
+                        <ul>
+                            <li>Inter-rater reliability (Cohen's κ) between AutoClean Vision and expert consensus</li>
+                            <li>Sensitivity and specificity for each artifact category</li>
+                            <li>Processing time and computational requirements</li>
+                            <li>False positive and false negative rates by population</li>
+                        </ul>
+                        
+                        <p><strong>Statistical Analysis:</strong> Mixed-effects models accounting for participant clustering, Bland-Altman analysis for method agreement, ROC analysis for classification performance.</p>
+                        
+                        <p><strong>Timeline:</strong> 12 months (3 months recruitment, 6 months data collection, 3 months analysis)</p>
+                        
+                        <p><strong>Expected Outcomes:</strong> We hypothesize that AutoClean Vision will demonstrate non-inferiority to expert manual review (κ ≥ 0.80) while significantly reducing processing time (effect size d ≥ 1.0) compared to manual methods.</p>
+                    </div>
+                    
+                    <h4>3.2.2 Experiment 2: Population-Specific Performance Analysis</h4>
+                    <div class="experiment-details">
+                        <p><strong>Objective:</strong> Characterize performance variations across developmental stages and clinical conditions to guide population-specific model optimization.</p>
+                        
+                        <p><strong>Design:</strong> Cross-sectional analysis with nested case-control comparisons within diagnostic categories.</p>
+                        
+                        <p><strong>Clinical Populations:</strong></p>
+                        <ul>
+                            <li>Neurotypical controls (n = 100 across age groups)</li>
+                            <li>Autism Spectrum Disorder (n = 75, ages 3-18)</li>
+                            <li>ADHD (n = 75, ages 6-18)</li>
+                            <li>Pediatric Epilepsy (n = 50, ages 2-18)</li>
+                            <li>Neurodevelopmental delays (n = 50, ages 6 months-12 years)</li>
+                        </ul>
+                        
+                        <p><strong>Primary Metrics:</strong></p>
+                        <ul>
+                            <li>Classification accuracy stratified by artifact type and age group</li>
+                            <li>Confidence score distributions across populations</li>
+                            <li>Artifact burden characterization by condition</li>
+                            <li>Algorithm stability across recording sessions</li>
+                        </ul>
+                        
+                        <p><strong>Secondary Analyses:</strong></p>
+                        <ul>
+                            <li>Age-related performance trajectories</li>
+                            <li>Medication effects on artifact patterns</li>
+                            <li>Comorbidity impact on classification accuracy</li>
+                            <li>Recording duration requirements for reliable classification</li>
+                        </ul>
+                        
+                        <p><strong>Timeline:</strong> 18 months (6 months recruitment across multiple sites, 9 months data collection, 3 months analysis)</p>
+                        
+                        <p><strong>Expected Outcomes:</strong> We anticipate age-related performance gradients with higher accuracy in adults (κ ≥ 0.85) declining in younger populations (κ ≥ 0.70 in preschoolers), requiring population-specific confidence thresholds.</p>
+                    </div>
+                    
+                    <h4>3.2.3 Experiment 3: Human-AI Collaboration Optimization</h4>
+                    <div class="experiment-details">
+                        <p><strong>Objective:</strong> Determine optimal confidence thresholds and review workflows that balance accuracy with expert time investment.</p>
+                        
+                        <p><strong>Design:</strong> Randomized controlled trial comparing four collaboration strategies using identical EEG datasets.</p>
+                        
+                        <p><strong>Collaboration Conditions:</strong></p>
+                        <ul>
+                            <li><strong>Fully Automated:</strong> AutoClean Vision decisions accepted without review</li>
+                            <li><strong>AI-First Review:</strong> Expert review only for low-confidence classifications (&lt;0.80)</li>
+                            <li><strong>Human-First Review:</strong> Expert pre-screening followed by AI assistance</li>
+                            <li><strong>Hybrid Workflow:</strong> Adaptive thresholds based on artifact type and population</li>
+                        </ul>
+                        
+                        <p><strong>Participants:</strong> 15 EEG technologists and researchers with varying experience levels (5 novice, 5 intermediate, 5 expert)</p>
+                        
+                        <p><strong>Outcome Measures:</strong></p>
+                        <ul>
+                            <li>Final classification accuracy compared to expert consensus</li>
+                            <li>Time to completion for each workflow</li>
+                            <li>User satisfaction and confidence ratings</li>
+                            <li>Learning curve effects over multiple sessions</li>
+                            <li>Error detection and correction rates</li>
+                        </ul>
+                        
+                        <p><strong>Timeline:</strong> 9 months (2 months setup and training, 5 months data collection, 2 months analysis)</p>
+                        
+                        <p><strong>Expected Outcomes:</strong> We hypothesize that hybrid workflows will optimize the accuracy-efficiency trade-off, reducing expert review time by 60-80% while maintaining ≥95% of full manual review accuracy.</p>
+                    </div>
+                    
+                    <h4>3.2.4 Experiment 4: Longitudinal Validation and Reliability</h4>
+                    <div class="experiment-details">
+                        <p><strong>Objective:</strong> Assess long-term reliability, test-retest consistency, and developmental sensitivity of the classification system.</p>
+                        
+                        <p><strong>Design:</strong> Longitudinal cohort study with repeated measurements and cross-equipment validation.</p>
+                        
+                        <p><strong>Cohorts:</strong></p>
+                        <ul>
+                            <li><strong>Developmental Cohort:</strong> n = 150 children (ages 3-18) followed over 24 months</li>
+                            <li><strong>Aging Cohort:</strong> n = 100 adults (ages 60-85) followed over 12 months</li>
+                            <li><strong>Clinical Stability Cohort:</strong> n = 75 participants with stable neurological conditions</li>
+                        </ul>
+                        
+                        <p><strong>Measurement Schedule:</strong></p>
+                        <ul>
+                            <li>Baseline, 6, 12, 18, and 24-month follow-ups</li>
+                            <li>Cross-equipment validation using 3 different EEG systems</li>
+                            <li>Test-retest reliability within 2-week intervals</li>
+                        </ul>
+                        
+                        <p><strong>Primary Endpoints:</strong></p>
+                        <ul>
+                            <li>Test-retest reliability coefficients (ICC ≥ 0.85 target)</li>
+                            <li>Developmental trajectory sensitivity</li>
+                            <li>Equipment-related performance variations</li>
+                            <li>Seasonal and circadian effects on classification</li>
+                        </ul>
+                        
+                        <p><strong>Timeline:</strong> 24 months (ongoing recruitment and follow-up)</p>
+                        
+                        <p><strong>Expected Outcomes:</strong> We expect high test-retest reliability (ICC ≥ 0.90) for stable populations while demonstrating sensitivity to genuine developmental changes in brain activity patterns.</p>
+                    </div>
+                    
+                    <h3>3.3 Statistical Framework and Power Analysis</h3>
+                    <p>All proposed experiments follow rigorous statistical design principles:</p>
+                    
+                    <ul>
+                        <li><strong>Sample Size Calculation:</strong> Power analysis (β = 0.80, α = 0.05) with effect sizes based on pilot data and literature review</li>
+                        <li><strong>Multiple Comparisons:</strong> Bonferroni correction for family-wise error rate control</li>
+                        <li><strong>Missing Data:</strong> Multiple imputation for datasets with &lt;15% missing values</li>
+                        <li><strong>Nested Data Structure:</strong> Mixed-effects models accounting for site and participant clustering</li>
+                        <li><strong>Clinical Significance:</strong> Minimal important difference thresholds established through expert consensus</li>
+                    </ul>
+                    
+                    <h3>3.4 Ethical Considerations and Regulatory Compliance</h3>
+                    <p>All proposed studies will be conducted under appropriate ethical oversight:</p>
+                    
+                    <ul>
+                        <li><strong>IRB Approval:</strong> Institutional Review Board approval at all participating sites</li>
+                        <li><strong>Data Protection:</strong> HIPAA compliance and GDPR alignment for international collaborations</li>
+                        <li><strong>Vulnerable Populations:</strong> Additional protections for pediatric participants and clinical populations</li>
+                        <li><strong>Informed Consent:</strong> Age-appropriate assent procedures and guardian consent protocols</li>
+                        <li><strong>Data Sharing:</strong> Open science principles with appropriate de-identification procedures</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discussion -->
+        <section id="discussion" class="academic-section">
+            <div class="container">
+                <div class="content-width">
+                    <h2>4. Discussion</h2>
+                    
+                    <h3>4.1 Implications for Neurophysiological Research</h3>
+                    <p>The integration of computer vision approaches into EEG preprocessing represents a paradigm shift from statistical feature-based methods to visual pattern recognition. This transformation addresses fundamental limitations in scalability and consistency that have constrained large-scale neurophysiological studies.</p>
+                    
+                    <h3>4.2 Methodological Advances</h3>
+                    <p>Several technical innovations contribute to the system's performance:</p>
+                    
+                    <ul>
+                        <li><strong>Multi-modal integration:</strong> Simultaneous analysis of spatial, spectral, and temporal features</li>
+                        <li><strong>Expert knowledge codification:</strong> Translation of clinical expertise into computational frameworks</li>
+                        <li><strong>Confidence scoring:</strong> Probabilistic output enabling quality-based decision making</li>
+                        <li><strong>Active learning capability:</strong> Continuous improvement through expert feedback integration</li>
+                    </ul>
+                    
+                    <h3>4.3 Limitations and Future Directions</h3>
+                    <p>While AutoClean Vision demonstrates substantial improvements, several limitations warrant consideration:</p>
+                    
+                    <ul>
+                        <li><strong>Training data bias:</strong> Performance may be limited by the diversity of training datasets</li>
+                        <li><strong>Novel artifact types:</strong> Unseen artifact patterns may require model retraining</li>
+                        <li><strong>Computational requirements:</strong> GPU acceleration recommended for real-time applications</li>
+                        <li><strong>Integration complexity:</strong> Requires workflow modifications for optimal implementation</li>
+                    </ul>
+                    
+                    <h3>4.4 Clinical Translation</h3>
+                    <p>The system's high accuracy and consistency suggest potential for clinical deployment, particularly in settings requiring rapid EEG interpretation. However, regulatory validation and additional clinical testing are necessary before widespread adoption.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation -->
+        <section id="implementation" class="academic-section">
+            <div class="container">
+                <div class="content-width">
+                    <h2>5. Implementation and Integration</h2>
+                    
+                    <h3>5.1 MNE-Python Integration Framework</h3>
+                    <p>AutoClean Vision provides seamless integration with existing MNE-Python workflows through a comprehensive API designed for research reproducibility:</p>
+                    
+                    <pre><code class="language-python"># AutoClean Vision integration example
+import mne
+from autoclean_vision import AutoCleanVision
+
+# Initialize with research-grade parameters
+acv = AutoCleanVision(
+    confidence_threshold=0.8,
+    model_version="research-v2.1",
+    validation_mode=True,
+    random_state=42  # For reproducibility
+)
+
+# Standard MNE preprocessing pipeline
+raw = mne.io.read_raw_edf('subject_001.edf', preload=True)
+raw.filter(l_freq=1.0, h_freq=40.0)
+
+# Independent Component Analysis
+ica = mne.preprocessing.ICA(
+    n_components=25, 
+    random_state=42,
+    method='infomax'
+)
 ica.fit(raw)
 
-# Vision-based component classification
-classifications = acv.classify_ica_components(ica, raw)
-brain_components = [i for i, cls in enumerate(classifications) 
-                   if cls.label == 'brain']
-ica.exclude = [i for i in range(len(classifications)) 
-               if i not in brain_components]</code></pre>
-                    </div>
-                </div>
-                <div class="integration-benefits">
-                    <h3>Integration Benefits</h3>
-                    <div class="benefits-grid">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">🔄</div>
-                            <h4>Backwards Compatibility</h4>
-                            <p>Existing MNE scripts work unchanged</p>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">🎛️</div>
-                            <h4>Opt-in Enhancement</h4>
-                            <p>Gradual adoption without workflow disruption</p>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">⚡</div>
-                            <h4>Performance Optimization</h4>
-                            <p>GPU acceleration for vision models</p>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✅</div>
-                            <h4>Quality Assurance</h4>
-                            <p>Confidence scoring for automated decisions</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="migration-strategy">
-                    <h3>Migration Strategy</h3>
-                    <div class="phase-timeline">
-                        <div class="phase-item">
-                            <div class="phase-number">1</div>
-                            <div class="phase-content">
-                                <h4>Parallel Validation</h4>
-                                <p>Run existing + AutoClean Vision side-by-side</p>
-                            </div>
-                        </div>
-                        <div class="phase-item">
-                            <div class="phase-number">2</div>
-                            <div class="phase-content">
-                                <h4>Selective Adoption</h4>
-                                <p>Use high-confidence classifications only</p>
-                            </div>
-                        </div>
-                        <div class="phase-item">
-                            <div class="phase-number">3</div>
-                            <div class="phase-content">
-                                <h4>Full Integration</h4>
-                                <p>Automated processing with expert oversight</p>
-                            </div>
-                        </div>
-                        <div class="phase-item">
-                            <div class="phase-number">4</div>
-                            <div class="phase-content">
-                                <h4>Advanced Features</h4>
-                                <p>Custom prompts and active learning</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+# AutoClean Vision classification with detailed logging
+classifications = acv.classify_ica_components(
+    ica, raw,
+    generate_report=True,
+    save_visualizations=True,
+    output_dir='./autoclean_output/'
+)
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>AutoClean Vision</h4>
-                    <p>Revolutionary vision-based EEG artifact detection system</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Resources</h4>
+# Population-specific processing
+if subject_age < 12:
+    acv.set_pediatric_mode(
+        age_group='school_age',
+        movement_tolerance='high',
+        confidence_adjustment=-0.1
+    )
+
+# Natural language control interface
+acv.set_processing_instructions(
+    "Conservative artifact rejection for clinical research. "
+    "Prioritize preservation of alpha band activity. "
+    "Flag uncertain classifications for expert review."
+)
+
+# Apply classifications with expert review interface
+brain_components = [
+    i for i, cls in enumerate(classifications) 
+    if cls.label == 'brain' and cls.confidence > 0.9
+]
+
+# Expert validation interface (optional)
+if acv.config.expert_review_enabled:
+    validated_components = acv.expert_review_interface(
+        classifications, 
+        display_reasoning=True,
+        save_corrections=True  # For active learning
+    )
+    brain_components = validated_components['brain']
+
+# Apply cleaning with provenance tracking
+ica.exclude = [i for i in range(len(classifications)) 
+               if i not in brain_components]
+raw_clean = ica.apply(raw.copy())
+
+# Generate comprehensive methodology report
+methodology_report = acv.generate_methods_section(
+    include_parameters=True,
+    include_performance_metrics=True,
+    citation_format='apa'
+)</code></pre>
+                    
+                    <h3>5.2 Advanced Integration Features</h3>
+                    
+                    <h4>5.2.1 Natural Language Processing Interface</h4>
+                    <p>AutoClean Vision supports natural language instructions for research-specific requirements:</p>
+                    
+                    <div class="code-examples">
+                        <div class="example-block">
+                            <h5>Research Context Examples:</h5>
+                            <pre><code># Sleep EEG optimization
+acv.set_instructions("Optimize for sleep EEG artifacts, ignore cardiac activity during REM phases")
+
+# Pediatric population adjustments  
+acv.set_instructions("Adjust thresholds for pediatric population, expect higher movement artifacts")
+
+# Clinical research protocols
+acv.set_instructions("Conservative rejection for clinical trial, prioritize specificity over sensitivity")
+
+# Neurodevelopmental disorders
+acv.set_instructions("Account for atypical brain patterns in autism spectrum disorders")</code></pre>
+                        </div>
+                    </div>
+                    
+                    <h4>5.2.2 Population-Specific Model Configuration</h4>
+                    <p>Adaptive model selection and parameter optimization based on demographic and recording characteristics:</p>
+                    
+                    <table class="academic-table">
+                        <thead>
+                            <tr>
+                                <th>Population</th>
+                                <th>Age Range</th>
+                                <th>Configuration Profile</th>
+                                <th>Confidence Threshold</th>
+                                <th>Validation Target</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Adult Neurotypical</td>
+                                <td>18-65 years</td>
+                                <td>adult-research-standard</td>
+                                <td>0.85</td>
+                                <td>Expert agreement ≥85%</td>
+                            </tr>
+                            <tr>
+                                <td>Adolescent</td>
+                                <td>13-17 years</td>
+                                <td>adolescent-enhanced-movement</td>
+                                <td>0.80</td>
+                                <td>Expert agreement ≥80%</td>
+                            </tr>
+                            <tr>
+                                <td>School-Age</td>
+                                <td>6-12 years</td>
+                                <td>pediatric-adaptive-tolerance</td>
+                                <td>0.75</td>
+                                <td>Expert agreement ≥75%</td>
+                            </tr>
+                            <tr>
+                                <td>Preschool</td>
+                                <td>3-5 years</td>
+                                <td>early-childhood-developmental</td>
+                                <td>0.70</td>
+                                <td>Expert agreement ≥70%</td>
+                            </tr>
+                            <tr>
+                                <td>Infant/Toddler</td>
+                                <td>0-2 years</td>
+                                <td>infant-specialized-patterns</td>
+                                <td>0.65</td>
+                                <td>Expert agreement ≥65%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-caption">
+                        <strong>Table 5:</strong> Population-specific configuration profiles with target validation metrics. Performance targets will be validated through the proposed experimental studies outlined in Section 3.
+                    </div>
+                    
+                    <h3>5.3 Installation and Configuration</h3>
+                    
+                    <h4>5.3.1 Configuration Wizard Interface</h4>
+                    <p>AutoClean Vision includes a comprehensive configuration wizard to guide users through optimal parameter selection for their specific research or clinical context:</p>
+                    
+                    <div class="config-wizard-steps">
+                        <div class="academic-figure">
+                            <img src="assets/images/config/Wiz -1.PNG" alt="AutoClean Vision configuration wizard step 1 - initial setup and data source configuration" width="800" height="600">
+                            <div class="figure-caption">
+                                <strong>Figure 10:</strong> Configuration wizard initial setup interface. Users specify (A) data source and format specifications, (B) recording parameters including sampling rate and channel configuration, (C) analysis objectives and module selection, and (D) quality requirements and validation preferences. The wizard automatically recommends optimal parameters based on the specified research context and population characteristics.
+                            </div>
+                        </div>
+                        
+                        <div class="academic-figure">
+                            <img src="assets/images/config/Wiz -2.PNG" alt="AutoClean Vision configuration wizard step 2 - population-specific parameter optimization" width="800" height="600">
+                            <div class="figure-caption">
+                                <strong>Figure 11:</strong> Population-specific parameter optimization interface. The wizard configures (A) age-appropriate detection thresholds and artifact tolerance levels, (B) clinical context considerations including medication effects and pathological pattern preservation, (C) experimental paradigm integration with stimulus timing and trial structure, and (D) statistical power requirements and minimum data quality standards for reliable analysis outcomes.
+                            </div>
+                        </div>
+                        
+                        <div class="academic-figure">
+                            <img src="assets/images/config/Wiz -3.PNG" alt="AutoClean Vision configuration wizard step 3 - advanced settings and validation protocols" width="800" height="600">
+                            <div class="figure-caption">
+                                <strong>Figure 12:</strong> Advanced configuration and validation protocol setup. The final wizard step establishes (A) expert review workflows and confidence thresholds, (B) output format preferences and reporting requirements, (C) integration settings for existing analysis pipelines, and (D) validation and quality assurance protocols including cross-validation procedures and performance monitoring. The interface ensures optimal system configuration for specific research requirements while maintaining reproducibility standards.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>5.3.2 System Installation</h4>
+                    <pre><code># Create isolated environment
+conda create -n autoclean-vision python=3.9
+conda activate autoclean-vision
+
+# Install dependencies
+conda install -c conda-forge mne matplotlib numpy scipy
+pip install autoclean-vision
+
+# Optional: GPU acceleration (recommended for large datasets)
+conda install pytorch torchvision pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# Verification and model download
+python -c "import autoclean_vision; autoclean_vision.setup_models()"</code></pre>
+                    
+                    <h4>5.3.2 System Requirements</h4>
+                    <table class="academic-table">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Minimum</th>
+                                <th>Recommended</th>
+                                <th>For Large-Scale Studies</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RAM</td>
+                                <td>8 GB</td>
+                                <td>16 GB</td>
+                                <td>32 GB</td>
+                            </tr>
+                            <tr>
+                                <td>Storage</td>
+                                <td>10 GB free</td>
+                                <td>50 GB free</td>
+                                <td>500 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td>GPU</td>
+                                <td>Not required</td>
+                                <td>GTX 1060 6GB</td>
+                                <td>RTX 4090 24GB</td>
+                            </tr>
+                            <tr>
+                                <td>CPU</td>
+                                <td>4 cores</td>
+                                <td>8 cores</td>
+                                <td>16+ cores</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>5.4 Configuration for Different Research Contexts</h3>
+                    
+                    <table class="academic-table">
+                        <thead>
+                            <tr>
+                                <th>Research Context</th>
+                                <th>Confidence Threshold</th>
+                                <th>Expert Review %</th>
+                                <th>Model Selection</th>
+                                <th>Processing Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Exploratory Analysis</td>
+                                <td>0.70</td>
+                                <td>10%</td>
+                                <td>Automatic</td>
+                                <td>Speed</td>
+                            </tr>
+                            <tr>
+                                <td>Clinical Research</td>
+                                <td>0.85</td>
+                                <td>25%</td>
+                                <td>Population-specific</td>
+                                <td>Accuracy</td>
+                            </tr>
+                            <tr>
+                                <td>Publication-Grade</td>
+                                <td>0.90</td>
+                                <td>40%</td>
+                                <td>Research-validated</td>
+                                <td>Precision</td>
+                            </tr>
+                            <tr>
+                                <td>Clinical Trials</td>
+                                <td>0.95</td>
+                                <td>75%</td>
+                                <td>FDA-validated</td>
+                                <td>Regulatory compliance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-caption">
+                        <strong>Table 6:</strong> Research context-specific configuration recommendations balancing automation with validation requirements.
+                    </div>
+                    
+                    <h3>5.5 Migration Strategy and Workflow Integration</h3>
+                    
+                    <h4>5.5.1 Phased Implementation Approach</h4>
+                    <div class="migration-phases">
+                        <div class="phase-item">
+                            <div class="phase-header">
+                                <span class="phase-number">1</span>
+                                <h5>Parallel Validation Phase (2-4 weeks)</h5>
+                            </div>
+                            <div class="phase-content">
+                                <p><strong>Objective:</strong> Establish confidence in AutoClean Vision performance for your specific datasets</p>
+                                <ul>
+                                    <li>Process historical datasets with both traditional and AutoClean Vision methods</li>
+                                    <li>Compare results on key outcome measures</li>
+                                    <li>Identify optimal confidence thresholds for your population</li>
+                                    <li>Train research staff on system interface and interpretation</li>
+                                </ul>
+                                <p><strong>Success Criteria:</strong> ≥90% agreement on high-confidence classifications, <50% processing time</p>
+                            </div>
+                        </div>
+                        
+                        <div class="phase-item">
+                            <div class="phase-header">
+                                <span class="phase-number">2</span>
+                                <h5>Selective Adoption Phase (4-8 weeks)</h5>
+                            </div>
+                            <div class="phase-content">
+                                <p><strong>Objective:</strong> Implement AutoClean Vision for high-confidence classifications while maintaining quality control</p>
+                                <ul>
+                                    <li>Automatically accept classifications with confidence ≥0.90</li>
+                                    <li>Route uncertain cases (0.70-0.89) to streamlined expert review</li>
+                                    <li>Maintain traditional workflow for complex cases (<0.70)</li>
+                                    <li>Collect performance metrics and user feedback</li>
+                                </ul>
+                                <p><strong>Success Criteria:</strong> 60-80% automation rate, maintained quality standards</p>
+                            </div>
+                        </div>
+                        
+                        <div class="phase-item">
+                            <div class="phase-header">
+                                <span class="phase-number">3</span>
+                                <h5>Full Integration Phase (8-12 weeks)</h5>
+                            </div>
+                            <div class="phase-content">
+                                <p><strong>Objective:</strong> Complete workflow transformation with minimal expert oversight</p>
+                                <ul>
+                                    <li>Implement fully automated processing for routine cases</li>
+                                    <li>Establish quality assurance sampling protocols</li>
+                                    <li>Deploy active learning from expert corrections</li>
+                                    <li>Optimize processing parameters based on accumulated data</li>
+                                </ul>
+                                <p><strong>Success Criteria:</strong> 85%+ automation rate, improved throughput, user satisfaction</p>
+                            </div>
+                        </div>
+                        
+                        <div class="phase-item">
+                            <div class="phase-header">
+                                <span class="phase-number">4</span>
+                                <h5>Advanced Features Phase (3-6 months)</h5>
+                            </div>
+                            <div class="phase-content">
+                                <p><strong>Objective:</strong> Leverage advanced capabilities for research enhancement</p>
+                                <ul>
+                                    <li>Implement custom prompts for specialized research questions</li>
+                                    <li>Deploy population-specific models for improved accuracy</li>
+                                    <li>Integrate with laboratory information management systems</li>
+                                    <li>Contribute to collaborative model improvement initiatives</li>
+                                </ul>
+                                <p><strong>Success Criteria:</strong> Enhanced research capabilities, contribution to model development</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>5.6 Quality Assurance and Validation Protocols</h3>
+                    
+                    <h4>5.6.1 Ongoing Quality Monitoring</h4>
                     <ul>
-                        <li><a href="#documentation">Documentation</a></li>
-                        <li><a href="#api">API Reference</a></li>
-                        <li><a href="#examples">Examples</a></li>
-                        <li><a href="#support">Support</a></li>
+                        <li><strong>Random Sampling:</strong> Expert review of 5% of automated classifications</li>
+                        <li><strong>Confidence Calibration:</strong> Monthly assessment of confidence score accuracy</li>
+                        <li><strong>Population Drift Detection:</strong> Monitoring for changes in artifact patterns over time</li>
+                        <li><strong>Performance Degradation Alerts:</strong> Automated detection of unusual classification patterns</li>
                     </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Research</h4>
+                    
+                    <h4>5.6.2 Documentation and Reproducibility</h4>
                     <ul>
-                        <li><a href="#publications">Publications</a></li>
-                        <li><a href="#datasets">Datasets</a></li>
-                        <li><a href="#validation">Validation Studies</a></li>
-                        <li><a href="#collaboration">Collaboration</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="#team">Research Team</a></li>
-                        <li><a href="#partnerships">Partnerships</a></li>
-                        <li><a href="#feedback">Feedback</a></li>
+                        <li><strong>Processing Logs:</strong> Comprehensive recording of all processing parameters and decisions</li>
+                        <li><strong>Version Control:</strong> Model version tracking for longitudinal studies</li>
+                        <li><strong>Methods Export:</strong> Automated generation of methods sections for publications</li>
+                        <li><strong>Data Provenance:</strong> Complete audit trail from raw data to final results</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 AutoClean Vision. Advancing neuroscience through AI innovation.</p>
+        </section>
+
+        <!-- Validation Studies -->
+        <section id="validation" class="academic-section">
+            <div class="container">
+                <div class="content-width">
+                    <h2>6. Comprehensive Validation Framework</h2>
+                    
+                    <p>We propose a systematic validation approach across diverse EEG populations and clinical contexts, with particular emphasis on developmental and pediatric applications where artifact detection presents unique challenges.</p>
+                    
+                    <h3>6.1 Adult Neurotypical Population Validation (6 months)</h3>
+                    <p><strong>Objective:</strong> Establish baseline performance in standard adult EEG research paradigms.</p>
+                    <p><strong>Design:</strong> Multi-site validation across 5 research centers using high-density EEG (64-128 channels)</p>
+                    <p><strong>Populations:</strong></p>
+                    <ul>
+                        <li>Healthy adults (n=200, ages 18-65)</li>
+                        <li>Cognitive task paradigms (resting-state, oddball, working memory)</li>
+                        <li>Multiple EEG systems (BrainVision, Neuroscan, EGI, Biosemi)</li>
+                    </ul>
+                    <p><strong>Primary Endpoints:</strong> Classification accuracy vs. expert consensus, processing time reduction, inter-rater reliability (target κ ≥ 0.90)</p>
+                    <p><strong>Statistical Analysis:</strong> Mixed-effects models accounting for site and paradigm variability, non-inferiority testing (margin δ = 3%)</p>
+                    
+                    <h3>6.2 Pediatric EEG Validation (12 months)</h3>
+                    <p><strong>Objective:</strong> Validate performance in pediatric populations with age-specific artifact patterns.</p>
+                    <p><strong>Design:</strong> Age-stratified validation study across pediatric neurology centers</p>
+                    <p><strong>Populations:</strong></p>
+                    <ul>
+                        <li><strong>School-age children (6-12 years, n=150):</strong> Higher movement artifacts, shorter attention spans</li>
+                        <li><strong>Adolescents (13-17 years, n=120):</strong> Transitional patterns, compliance variability</li>
+                        <li><strong>Clinical referrals:</strong> ADHD, autism spectrum disorders, epilepsy monitoring</li>
+                    </ul>
+                    <p><strong>Pediatric-Specific Challenges:</strong></p>
+                    <ul>
+                        <li>Increased movement artifacts (expected 2-3x adult rates)</li>
+                        <li>Age-dependent spectral characteristics</li>
+                        <li>Reduced electrode tolerance and session duration</li>
+                        <li>Caregiver presence effects on recording quality</li>
+                    </ul>
+                    <p><strong>Validation Metrics:</strong> Age-stratified performance curves, artifact type prevalence by age group, expert pediatric neurologist agreement</p>
+                    <p><strong>Adaptive Algorithms:</strong> Age-specific threshold adjustment, developmental spectral templates, movement tolerance optimization</p>
+                    
+                    <h3>6.3 Infant and Early Childhood Validation (18 months)</h3>
+                    <p><strong>Objective:</strong> Address unique challenges in infant EEG with high artifact burden and developmental considerations.</p>
+                    <p><strong>Design:</strong> Longitudinal cohort study in collaboration with developmental neuroscience centers</p>
+                    <p><strong>Populations:</strong></p>
+                    <ul>
+                        <li><strong>Infants (0-12 months, n=100):</strong> Sleep studies, developmental assessments</li>
+                        <li><strong>Toddlers (13-36 months, n=80):</strong> Naturalistic paradigms, play-based recordings</li>
+                        <li><strong>High-risk populations:</strong> Premature birth, developmental delays, seizure monitoring</li>
+                    </ul>
+                    <p><strong>Infant-Specific Adaptations:</strong></p>
+                    <ul>
+                        <li><strong>Artifact burden management:</strong> Expected artifact rates 60-80% of recording time</li>
+                        <li><strong>Physiological considerations:</strong> Higher heart rate variability, immature EEG patterns</li>
+                        <li><strong>Recording constraints:</strong> Shorter sessions (15-30 minutes), sleep-dependent paradigms</li>
+                        <li><strong>Safety protocols:</strong> Hypoallergenic electrodes, minimal preparation time</li>
+                    </ul>
+                    <p><strong>Comparative Analysis:</strong> AutoClean Vision vs. specialized infant artifact detection algorithms (HAPPE, BEAPP), manual expert review</p>
+                    <p><strong>Developmental Metrics:</strong> Age-appropriate signal-to-noise ratios, developmental milestone correlation with artifact patterns</p>
+                    
+                    <h3>6.4 Neurodevelopmental Disorder Validation (15 months)</h3>
+                    <p><strong>Objective:</strong> Validate performance in populations with atypical neural patterns and behavioral challenges.</p>
+                    <p><strong>Design:</strong> Case-control study comparing neurotypical and neurodevelopmental disorder populations</p>
+                    <p><strong>Clinical Populations:</strong></p>
+                    <ul>
+                        <li><strong>Autism Spectrum Disorders (n=80):</strong> Sensory sensitivity, behavioral compliance challenges</li>
+                        <li><strong>ADHD (n=60):</strong> Hyperactivity artifacts, attention-related movement patterns</li>
+                        <li><strong>Intellectual Disabilities (n=40):</strong> Communication barriers, variable cooperation</li>
+                        <li><strong>Epilepsy (n=100):</strong> Interictal spikes vs. artifacts, medication effects</li>
+                    </ul>
+                    <p><strong>Disorder-Specific Challenges:</strong></p>
+                    <ul>
+                        <li><strong>Behavioral artifacts:</strong> Stereotyped movements, self-stimulatory behaviors</li>
+                        <li><strong>Sensory processing:</strong> Electrode intolerance, environmental sensitivity</li>
+                        <li><strong>Communication barriers:</strong> Difficulty following instructions, anxiety responses</li>
+                        <li><strong>Medication effects:</strong> Psychotropic medications altering EEG patterns</li>
+                    </ul>
+                    <p><strong>Validation Approach:</strong> Disorder-specific expert panels, caregiver-reported outcome measures, functional assessment correlation</p>
+                    
+                    <h3>6.5 Cross-Population Comparative Analysis</h3>
+                    <p><strong>Primary Research Questions:</strong></p>
+                    <ol>
+                        <li><strong>Generalizability:</strong> Does a model trained on adult data generalize to pediatric populations?</li>
+                        <li><strong>Population-Specific Models:</strong> Do age-specific models outperform general-purpose algorithms?</li>
+                        <li><strong>Artifact Pattern Evolution:</strong> How do artifact characteristics change across development?</li>
+                        <li><strong>Clinical Translation:</strong> What performance thresholds are required for clinical adoption in each population?</li>
+                    </ol>
+                    
+                    <p><strong>Statistical Framework:</strong></p>
+                    <ul>
+                        <li><strong>Hierarchical modeling:</strong> Account for clustering within individuals, sites, and age groups</li>
+                        <li><strong>ROC curve analysis:</strong> Population-specific operating characteristics</li>
+                        <li><strong>Machine learning validation:</strong> Cross-validation within and across populations</li>
+                        <li><strong>Clinical significance testing:</strong> Equivalence margins based on clinical impact</li>
+                    </ul>
+                    
+                    <h3>6.6 Longitudinal Developmental Cohort (24 months)</h3>
+                    <p><strong>Objective:</strong> Track artifact pattern evolution and algorithm performance across development.</p>
+                    <p><strong>Design:</strong> Prospective longitudinal study following children from 6 months to 5 years</p>
+                    <p><strong>Cohort:</strong> n=60 children with quarterly assessments, both neurotypical and at-risk populations</p>
+                    <p><strong>Outcomes:</strong></p>
+                    <ul>
+                        <li>Developmental trajectories of artifact patterns</li>
+                        <li>Algorithm performance stability over time</li>
+                        <li>Optimal retraining intervals for developmental populations</li>
+                        <li>Predictive models for individual developmental trajectories</li>
+                    </ul>
+                    
+                    <h3>6.7 Real-World Implementation Study (18 months)</h3>
+                    <p><strong>Objective:</strong> Evaluate practical deployment across diverse clinical and research settings.</p>
+                    <p><strong>Sites:</strong></p>
+                    <ul>
+                        <li>Children's Hospital EEG laboratories (n=3)</li>
+                        <li>Developmental research centers (n=4)</li>
+                        <li>Community pediatric practices (n=2)</li>
+                    </ul>
+                    <p><strong>Implementation Metrics:</strong></p>
+                    <ul>
+                        <li>Time-to-adoption across different user groups</li>
+                        <li>Training requirements for clinical staff</li>
+                        <li>Integration with existing clinical workflows</li>
+                        <li>Cost-effectiveness analysis including personnel time savings</li>
+                        <li>User satisfaction and system acceptance rates</li>
+                    </ul>
+                    
+                    <h3>6.8 Regulatory and Ethical Considerations</h3>
+                    <p><strong>Pediatric Research Protections:</strong></p>
+                    <ul>
+                        <li>IRB approval with pediatric research expertise</li>
+                        <li>Age-appropriate assent procedures</li>
+                        <li>Minimal risk determination for each age group</li>
+                        <li>Data security and privacy protections for minors</li>
+                    </ul>
+                    <p><strong>Clinical Translation Pathway:</strong></p>
+                    <ul>
+                        <li>FDA De Novo pathway assessment for pediatric medical device classification</li>
+                        <li>Clinical utility demonstration for reimbursement considerations</li>
+                        <li>Professional society guideline integration (AES, ACNS, ILAE)</li>
+                    </ul>
+                </div>
             </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources" class="academic-section">
+            <div class="container">
+                <div class="content-width">
+                    <h2>7. Resources and Documentation</h2>
+                    
+                    <h3>7.1 Technical Documentation</h3>
+                    <ul>
+                        <li><a href="#api-reference">Complete API Reference</a></li>
+                        <li><a href="#integration-guide">MNE-Python Integration Guide</a></li>
+                        <li><a href="#validation-protocols">Validation Protocol Specifications</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting and FAQ</a></li>
+                    </ul>
+                    
+                    <h3>7.2 Research Support</h3>
+                    <ul>
+                        <li><a href="#datasets">Validation Datasets and Benchmarks</a></li>
+                        <li><a href="#reproducibility">Reproducibility Guidelines</a></li>
+                        <li><a href="#collaboration">Research Collaboration Opportunities</a></li>
+                        <li><a href="#grants">Grant Writing Support Materials</a></li>
+                    </ul>
+                    
+                    <h3>7.3 Citation and Attribution</h3>
+                    <div class="citation">
+                        <strong>Cite this work:</strong><br>
+                        AutoClean Vision Research Team. (2025). Computer Vision Approaches to Automated EEG Artifact Classification. <em>AutoClean Vision Technical Documentation</em>. 
+                        
+                        <div class="citation-export">
+                            <button onclick="exportCitation('bibtex')">BibTeX</button>
+                            <button onclick="exportCitation('apa')">APA</button>
+                            <button onclick="exportCitation('mla')">MLA</button>
+                            <button onclick="exportCitation('chicago')">Chicago</button>
+                        </div>
+                    </div>
+                    
+                    <h3>7.4 Contact and Support</h3>
+                    <p>For technical support, research collaborations, or methodological questions:</p>
+                    <ul>
+                        <li><strong>Technical Support:</strong> <a href="mailto:support@autoclean-vision.org">support@autoclean-vision.org</a></li>
+                        <li><strong>Research Collaborations:</strong> <a href="mailto:collaborate@autoclean-vision.org">collaborate@autoclean-vision.org</a></li>
+                        <li><strong>Documentation Issues:</strong> <a href="https://github.com/autoclean-vision/docs/issues">GitHub Issues</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Academic Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#methodology">Methodology</a>
+                <a href="#validation">Validation Studies</a>
+                <a href="#implementation">Implementation</a>
+                <a href="#resources">Documentation</a>
+                <a href="mailto:info@autoclean-vision.org">Contact</a>
+            </div>
+            <p class="footer-text">
+                AutoClean Vision © 2025. Open source project supporting reproducible neuroscience research.
+            </p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script-academic.js"></script>
 </body>
 </html>
