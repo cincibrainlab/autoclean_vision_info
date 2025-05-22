@@ -74,7 +74,7 @@
                     </ul>
                     
                     <div class="academic-figure">
-                        <img src="assets/images/ica_component_analysis.png" alt="Example of ICA component analysis showing topography, power spectrum, and time series" width="600" height="400">
+                        <img src="assets/images/ica/CleanShot 2025-05-22 at 09.42.08@2x.png" alt="AutoClean Vision ICA component analysis showing real interface with topography, power spectrum, and time series" width="600" height="400">
                         <div class="figure-caption">
                             <strong>Figure 1:</strong> Independent Component Analysis visualization demonstrating multi-modal feature extraction. The system analyzes (A) scalp topography, (B) power spectral density, and (C) time series characteristics to classify components as brain activity or artifacts. This example shows a muscle artifact (Component 21) with characteristic edge-focused topography and high-frequency spectral dominance.
                         </div>
@@ -168,23 +168,9 @@
                     <p>Our peak detection module implements a multi-candidate visual heuristic approach:</p>
                     
                     <div class="academic-figure">
-                        <img src="assets/images/peak_detection.png" alt="Detrended spectrum showing peak detection algorithm" width="600" height="400">
-                        <div class="peak-analysis-academic">
-                            <h5>Multi-Candidate Analysis Example:</h5>
-                            <div class="candidate-list">
-                                <div class="candidate-item">
-                                    <strong>7.5 Hz:</strong> Primary candidate (confidence: 0.92, prominence: 3.2dB above background)
-                                </div>
-                                <div class="candidate-item">
-                                    <strong>8.5 Hz:</strong> Secondary candidate (confidence: 0.71, prominence: 1.8dB above background)
-                                </div>
-                                <div class="candidate-item">
-                                    <strong>11.0 Hz:</strong> Tertiary candidate (confidence: 0.45, prominence: 0.9dB above background)
-                                </div>
-                            </div>
-                        </div>
+                        <img src="assets/images/peaks/CleanShot 2025-04-30 at 16.38.26@2x.png" alt="AutoClean Vision peak detection interface showing multi-candidate visual heuristic analysis" width="800" height="600">
                         <div class="figure-caption">
-                            <strong>Figure 2:</strong> Multi-candidate peak detection on detrended power spectrum. The blue line represents observed power, the orange dashed line shows the background model, and the red vertical line indicates algorithmic peak detection. The visual system evaluates multiple candidates based on prominence above background and can override algorithmic decisions when visual analysis disagrees.
+                            <strong>Figure 2:</strong> AutoClean Vision peak detection interface demonstrating multi-candidate visual heuristic approach. The interface shows detrended power spectrum analysis with (A) observed spectral power in blue, (B) background noise model in orange, (C) algorithmic peak detection markers, and (D) visual prominence ranking system. The system identifies multiple candidate peaks and ranks them by visual prominence, enabling override of algorithmic decisions when visual analysis provides superior peak identification. This approach combines traditional signal processing with human-like visual pattern recognition for enhanced spectral analysis accuracy.
                         </div>
                     </div>
                     
@@ -208,9 +194,32 @@
                     <p>For each ICA component, the system generates three standardized visual representations that capture complementary information:</p>
                     
                     <div class="academic-figure">
-                        <img src="assets/images/ica_component_analysis.png" alt="ICA component analysis showing topographic, spectral, and temporal features" width="800" height="300">
+                        <img src="assets/images/ica/CleanShot 2025-05-22 at 09.06.16@2x.png" alt="AutoClean Vision ICA component analysis interface showing multi-modal feature extraction" width="800" height="600">
                         <div class="figure-caption">
-                            <strong>Figure 3:</strong> Multi-modal ICA component analysis. (A) Topographic map showing spatial distribution, (B) Power spectral density with background modeling, (C) Time series epochs showing morphological characteristics. Component classified as "eye artifact" based on frontal distribution, low-frequency dominance, and characteristic saccade-like deflections.
+                            <strong>Figure 3:</strong> AutoClean Vision ICA component analysis interface demonstrating multi-modal feature extraction. The interface displays simultaneous analysis of (A) topographic spatial distribution using spherical spline interpolation, (B) power spectral density with robust background modeling to highlight spectral peaks and deviations, and (C) representative time series epochs showing component activation patterns. This integrated visual approach enables expert-level pattern recognition for reliable component classification across all six artifact categories.
+                        </div>
+                    </div>
+                    
+                    <div class="module-figure-gallery">
+                        <div class="academic-figure">
+                            <img src="assets/images/ica/brain_component.webp" alt="Example of brain component classification showing dipolar topography and physiological spectrum" width="400" height="300">
+                            <div class="figure-caption">
+                                <strong>Figure 4:</strong> Brain component example showing characteristic dipolar topography with central maximum, 1/f spectral decline with alpha peak at 10Hz, and rhythmic oscillatory time series patterns consistent with cortical neuronal activity.
+                            </div>
+                        </div>
+                        
+                        <div class="academic-figure">
+                            <img src="assets/images/ica/heart_rate.webp" alt="Example of cardiac artifact component showing QRS-like patterns and heart rate frequency" width="400" height="300">
+                            <div class="figure-caption">
+                                <strong>Figure 5:</strong> Cardiac artifact component displaying broad electrical field gradient, narrowband spectral peak at heart rate frequency (~1Hz), and regular QRS complex morphology with stable inter-beat intervals.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/ica/CleanShot 2025-05-22 at 09.42.24@2x.png" alt="ICA component classification results interface showing confidence scores and expert review options" width="800" height="500">
+                        <div class="figure-caption">
+                            <strong>Figure 6:</strong> Classification results interface showing component-by-component analysis with confidence scores, category assignments, and expert review options. The interface provides detailed reasoning for each classification decision and enables efficient expert validation workflows for uncertain classifications below the confidence threshold.
                         </div>
                     </div>
                     
@@ -365,6 +374,13 @@ ica_vision.generate_processing_report(
                     <p>The approach implements a sliding window architecture with overlapping analysis segments, enabling continuous monitoring while providing sufficient temporal context for reliable artifact detection. The system adapts to changing recording conditions and experimental contexts through dynamic threshold adjustment and contextual pattern recognition.</p>
                     
                     <h5>2.6.1.2 Real-Time Processing Architecture</h5>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/continuous/CleanShot 2025-05-22 at 09.13.32@2x.png" alt="AutoClean Vision continuous rejection interface showing real-time artifact detection" width="800" height="600">
+                        <div class="figure-caption">
+                            <strong>Figure 7:</strong> Continuous rejection interface demonstrating real-time artifact detection capabilities. The interface displays (A) multi-channel EEG streams with sliding window analysis, (B) real-time artifact detection markers and classification, (C) temporal context visualization showing artifact propagation patterns, and (D) adaptive threshold monitoring with quality metrics. The system processes streaming data with minimal latency while maintaining comprehensive artifact detection across all channels simultaneously.
+                        </div>
+                    </div>
                     
                     <div class="processing-architecture">
                         <h6>Sliding Window Analysis Framework</h6>
@@ -555,6 +571,13 @@ processing_report = continuous_rejection.generate_session_report(
                     <p>The module addresses the critical challenge of balancing artifact removal with data preservation, particularly important in event-related potential (ERP) studies where each trial contributes valuable information to condition-specific averages. Advanced algorithms distinguish between genuine artifacts and task-related neural activity while considering the experimental context and statistical requirements of the research design.</p>
                     
                     <h5>2.6.2.2 Trial-Based Analysis Framework</h5>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/epochs/CleanShot 2025-05-22 at 09.15.03@2x.png" alt="AutoClean Vision epoch rejection interface showing trial-based artifact identification" width="800" height="600">
+                        <div class="figure-caption">
+                            <strong>Figure 8:</strong> Epoch rejection interface demonstrating trial-based artifact identification with experimental context integration. The interface shows (A) epoched EEG data aligned to stimulus events, (B) cross-trial consistency analysis highlighting systematic artifacts, (C) condition-specific artifact patterns and statistical metrics, and (D) partial rejection and recovery options for preserving statistical power. The system leverages experimental structure and stimulus timing to optimize artifact detection while maintaining adequate trial counts for reliable statistical analysis.
+                        </div>
+                    </div>
                     
                     <div class="trial-analysis-framework">
                         <h6>Experimental Context Integration</h6>
@@ -788,6 +811,13 @@ artifact_report_summary = epoch_rejection.export_rejection_summary(
                     <p>The approach combines multiple assessment criteria including impedance measurements, signal quality metrics, spatial correlation patterns, and temporal stability analysis to provide comprehensive electrode evaluation. Advanced algorithms distinguish between electrode-specific technical problems and legitimate focal brain activity, ensuring that clinically or scientifically relevant signals are preserved while removing truly problematic channels.</p>
                     
                     <h5>2.6.3.2 Multi-Criteria Bad Channel Identification</h5>
+                    
+                    <div class="academic-figure">
+                        <img src="assets/images/channels/CleanShot 2025-05-22 at 09.16.27@2x.png" alt="AutoClean Vision channel rejection interface showing multi-criteria bad channel detection" width="800" height="600">
+                        <div class="figure-caption">
+                            <strong>Figure 9:</strong> Channel rejection interface demonstrating multi-criteria bad channel identification and spatial analysis. The interface displays (A) electrode impedance measurements with threshold monitoring, (B) spatial correlation analysis showing neighbor relationships, (C) signal quality metrics including noise levels and variance patterns, and (D) interpolation feasibility assessment with quality validation. The system combines impedance data, signal characteristics, and spatial relationships to provide comprehensive electrode evaluation while preserving clinically critical channels.
+                        </div>
+                    </div>
                     
                     <div class="bad-channel-criteria">
                         <div class="criterion-category">
@@ -1610,9 +1640,35 @@ acv.set_instructions("Account for atypical brain patterns in autism spectrum dis
                         <strong>Table 5:</strong> Population-specific configuration profiles with target validation metrics. Performance targets will be validated through the proposed experimental studies outlined in Section 3.
                     </div>
                     
-                    <h3>5.3 Installation and System Requirements</h3>
+                    <h3>5.3 Installation and Configuration</h3>
                     
-                    <h4>5.3.1 Recommended Installation</h4>
+                    <h4>5.3.1 Configuration Wizard Interface</h4>
+                    <p>AutoClean Vision includes a comprehensive configuration wizard to guide users through optimal parameter selection for their specific research or clinical context:</p>
+                    
+                    <div class="config-wizard-steps">
+                        <div class="academic-figure">
+                            <img src="assets/images/config/Wiz -1.PNG" alt="AutoClean Vision configuration wizard step 1 - initial setup and data source configuration" width="800" height="600">
+                            <div class="figure-caption">
+                                <strong>Figure 10:</strong> Configuration wizard initial setup interface. Users specify (A) data source and format specifications, (B) recording parameters including sampling rate and channel configuration, (C) analysis objectives and module selection, and (D) quality requirements and validation preferences. The wizard automatically recommends optimal parameters based on the specified research context and population characteristics.
+                            </div>
+                        </div>
+                        
+                        <div class="academic-figure">
+                            <img src="assets/images/config/Wiz -2.PNG" alt="AutoClean Vision configuration wizard step 2 - population-specific parameter optimization" width="800" height="600">
+                            <div class="figure-caption">
+                                <strong>Figure 11:</strong> Population-specific parameter optimization interface. The wizard configures (A) age-appropriate detection thresholds and artifact tolerance levels, (B) clinical context considerations including medication effects and pathological pattern preservation, (C) experimental paradigm integration with stimulus timing and trial structure, and (D) statistical power requirements and minimum data quality standards for reliable analysis outcomes.
+                            </div>
+                        </div>
+                        
+                        <div class="academic-figure">
+                            <img src="assets/images/config/Wiz -3.PNG" alt="AutoClean Vision configuration wizard step 3 - advanced settings and validation protocols" width="800" height="600">
+                            <div class="figure-caption">
+                                <strong>Figure 12:</strong> Advanced configuration and validation protocol setup. The final wizard step establishes (A) expert review workflows and confidence thresholds, (B) output format preferences and reporting requirements, (C) integration settings for existing analysis pipelines, and (D) validation and quality assurance protocols including cross-validation procedures and performance monitoring. The interface ensures optimal system configuration for specific research requirements while maintaining reproducibility standards.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>5.3.2 System Installation</h4>
                     <pre><code># Create isolated environment
 conda create -n autoclean-vision python=3.9
 conda activate autoclean-vision

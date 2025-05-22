@@ -1443,6 +1443,7 @@ pre code {
     height: auto;
     border: 1px solid var(--border-color);
     border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .figure-caption {
@@ -1453,6 +1454,49 @@ pre code {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Module Figure Gallery */
+.module-figure-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.module-figure-gallery .academic-figure {
+    margin: 0;
+}
+
+.module-figure-gallery .figure-caption {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Configuration Wizard Steps */
+.config-wizard-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+    margin: var(--space-xl) 0;
+}
+
+.config-wizard-steps .academic-figure {
+    margin: var(--space-lg) 0;
+}
+
+/* Figure Comparison Layout */
+.figure-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.figure-comparison .academic-figure {
+    margin: 0;
 }
 
 /* Responsive Design for New Elements */
@@ -1461,8 +1505,14 @@ pre code {
     .application-contexts,
     .research-applications,
     .context-integration,
-    .population-protocols {
+    .population-protocols,
+    .module-figure-gallery {
         grid-template-columns: 1fr;
+    }
+    
+    .figure-comparison {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
     }
     
     .experiment-details,
@@ -1480,6 +1530,15 @@ pre code {
     pre code {
         padding: var(--space-md);
         font-size: 0.8rem;
+    }
+    
+    .config-wizard-steps {
+        gap: var(--space-lg);
+    }
+    
+    .academic-figure img {
+        width: 100%;
+        height: auto;
     }
 }
 
