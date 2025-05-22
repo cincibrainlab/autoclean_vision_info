@@ -1,0 +1,272 @@
+[
+    {
+        "component_index": 0,
+        "image_file": "ica_vision_test_output\\component_0_analysis.webp",
+        "classification_status": "Classified",
+        "label": "eye",
+        "confidence": 0.98,
+        "reason": "The topography shows a strong, tightly focused frontal activation with a clear dipolar pattern centered over the frontal midline, which is characteristic of vertical eye movements or blinks. The time series displays large, slow, spike-like deflections typical of eye blinks or vertical eye movements. The power spectrum is dominated by low-frequency power (<5 Hz) and shows no evidence of a sustained positive slope at high frequencies (which would indicate muscle), nor does it show QRS-like repetitive sharp spikes (which would indicate heart). There is no single-electrode focality (channel noise) or sharp 60Hz peak (line noise). The combination of these features is highly characteristic of an 'eye' component.",
+        "error": null
+    },
+    {
+        "component_index": 1,
+        "image_file": "ica_vision_test_output\\component_1_analysis.webp",
+        "classification_status": "Classified",
+        "label": "heart",
+        "confidence": 0.98,
+        "reason": "The topography shows a very broad, diffuse electrical field gradient across the scalp, with large positive (red) and negative (blue) regions on opposite sides, not tightly focused. The 'Scrolling IC Activity' time series displays prominent, sharp, repetitive spikes (QRS-like complexes) that stand out from the background rhythm, occurring at a regular interval (~1 Hz), which is characteristic of cardiac artifact. The spectrum does not show a clear 1/f pattern nor a sustained positive slope, and there is no sharp peak at 50/60Hz. These features together are definitive for 'heart' artifact.",
+        "error": null
+    },
+    {
+        "component_index": 2,
+        "image_file": "ica_vision_test_output\\component_2_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from around 20-30Hz upwards, curving upwards at higher frequencies. This is the hallmark of muscle artifact. The topography also shows a localized, edge-focused pattern (right temporal/posterior), which is common for muscle components. The time series is somewhat erratic and spiky, further supporting this classification. There is no evidence of a 1/f brain pattern, no sharp QRS-like spikes (heart), no tightly focused frontal dipole (eye), and no single-electrode focality (channel noise). The 60Hz notch is a normal filter artifact and not relevant for classification.",
+        "error": null
+    },
+    {
+        "component_index": 3,
+        "image_file": "ica_vision_test_output\\component_3_analysis.webp",
+        "classification_status": "Classified",
+        "label": "eye",
+        "confidence": 0.98,
+        "reason": "The topography shows a tightly focused left-right frontal dipolar pattern (red on right frontal, blue on left frontal), which is characteristic of horizontal eye movements. The time series does not show sharp, repetitive QRS-like spikes (which would indicate 'heart'), and the power spectrum is dominated by low frequencies with no sustained positive slope at high frequencies (which would indicate 'muscle'). The 60 Hz notch is a normal filtering artifact and not relevant for classification. All features are consistent with an 'eye' component due to horizontal eye movements.",
+        "error": null
+    },
+    {
+        "component_index": 4,
+        "image_file": "ica_vision_test_output\\component_4_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.98,
+        "reason": "The topography shows a clear, centrally located dipolar pattern centered over the midline (central/parietal region), not frontal or edge-focused. The power spectrum displays a classic 1/f pattern with decreasing power as frequency increases, and a visible alpha peak around 10 Hz. There is no evidence of a sustained positive slope at high frequencies (which would indicate muscle), no sharp QRS-like spikes in the time series (which would indicate heart), no tightly focused frontal dipole (which would indicate eye), and no isolated electrode hot spot (which would indicate channel noise). The 60 Hz notch is a normal filtering artifact and not a line noise peak. All features are consistent with a brain component.",
+        "error": null
+    },
+    {
+        "component_index": 5,
+        "image_file": "ica_vision_test_output\\component_5_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.9,
+        "reason": "The topography shows a dipolar pattern centered in the central-parietal region, not frontal or edge-focused. The power spectrum displays a clear 1/f-like pattern with decreasing power as frequency increases, and there is no sustained positive slope at high frequencies (which would indicate muscle). The time series is rhythmic and wave-like without abrupt level shifts or sharp, repetitive QRS-like spikes (which would indicate heart). There is a 60Hz notch, which is a normal filtering artifact and not indicative of line noise. No evidence of tightly focused frontal dipole (eye), single electrode focality (channel noise), or other artifact patterns. Thus, this component is best classified as 'brain'.",
+        "error": null
+    },
+    {
+        "component_index": 6,
+        "image_file": "ica_vision_test_output\\component_6_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.9,
+        "reason": "The topography shows a broad, dipolar pattern centered in the central-parietal region, not tightly focused in the frontal or edge areas. The power spectrum displays a clear 1/f-like decrease in power with increasing frequency, with no evidence of a sustained positive slope at high frequencies (which would indicate muscle). There is a 60Hz notch, which is a normal filtering artifact and not indicative of line noise. The time series is rhythmic and wave-like without abrupt level shifts or sharp, repetitive QRS-like spikes (which would indicate heart). There is no tightly focused left-right frontal dipole (eye) or single electrode hot spot (channel noise). Thus, this component is best classified as 'brain'.",
+        "error": null
+    },
+    {
+        "component_index": 7,
+        "image_file": "ica_vision_test_output\\component_7_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.9,
+        "reason": "The topography shows a dipolar pattern centered over the right central/parietal region, not frontal or edge-focused. The power spectrum displays a clear 1/f-like decrease in power with increasing frequency, with no sustained positive slope at high frequencies (which would indicate muscle). There is a 60 Hz notch, which is a normal filtering artifact and not a sign of line noise. The time series is rhythmic and wave-like without abrupt level shifts or sharp, repetitive QRS-like spikes (which would indicate heart). There is no tightly focused frontal dipole (which would indicate eye), nor a single electrode hot spot (channel noise). All features are consistent with a brain component.",
+        "error": null
+    },
+    {
+        "component_index": 8,
+        "image_file": "ica_vision_test_output\\component_8_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.9,
+        "reason": "The topography shows a clear dipolar pattern centered in the occipital/parietal region (not frontal or edge-focused), which is consistent with brain activity. The power spectrum displays a classic 1/f-like pattern, with power decreasing as frequency increases, and no evidence of a sustained positive slope at high frequencies (which would indicate muscle). There is a 60Hz notch, which is a normal filtering artifact and not indicative of line noise. The time series is rhythmic and wave-like without abrupt level shifts or sharp, repetitive QRS-like spikes (which would indicate heart). There is no tightly focused frontal dipole (eye) or single electrode focality (channel noise). Thus, this component is best classified as 'brain'.",
+        "error": null
+    },
+    {
+        "component_index": 9,
+        "image_file": "ica_vision_test_output\\component_9_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.95,
+        "reason": "The topography shows a clear dipolar pattern centered over central/parietal regions, not frontal or edge-focused. The power spectrum displays a classic 1/f-like decrease in power with increasing frequency, with no evidence of a sustained positive slope at high frequencies (which would indicate muscle). There is a 60 Hz notch, which is a normal filtering artifact and not indicative of line noise. The time series is rhythmic and wave-like without abrupt level shifts or sharp repetitive spikes (no QRS complexes, so not heart). There is no tightly focused frontal dipole (so not eye), nor a single electrode hot spot (so not channel noise). All features are consistent with a brain component.",
+        "error": null
+    },
+    {
+        "component_index": 10,
+        "image_file": "ica_vision_test_output\\component_10_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.9,
+        "reason": "The topography shows a dipolar pattern centered in the central-parietal/occipital region, not frontal or edge-focused. The power spectrum displays a clear 1/f-like pattern, with power decreasing as frequency increases, and no evidence of a sustained positive slope at high frequencies (which would indicate muscle). The time series is rhythmic and wave-like without abrupt level shifts or sharp, repetitive QRS-like spikes (which would indicate heart). There is a 60Hz notch, which is a normal filtering artifact and not indicative of line noise. No evidence of tightly focused frontal dipole (eye) or single electrode focality (channel noise). Thus, this component is best classified as 'brain'.",
+        "error": null
+    },
+    {
+        "component_index": 11,
+        "image_file": "ica_vision_test_output\\component_11_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.9,
+        "reason": "The topography shows a dipolar pattern centered in the posterior/occipital region, not frontal or edge-focused, and not a single electrode hot spot. The power spectrum displays a clear 1/f-like pattern with decreasing power at higher frequencies and no sustained positive slope (no muscle signature). There is a 60Hz notch, which is a normal filtering artifact, not a line noise peak. The time series is rhythmic and wave-like without abrupt level shifts or sharp, repetitive QRS-like spikes (rules out heart and eye). No evidence of muscle or channel noise. These features are consistent with a brain component.",
+        "error": null
+    },
+    {
+        "component_index": 12,
+        "image_file": "ica_vision_test_output\\component_12_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from about 20-30 Hz upwards, curving upwards at higher frequencies. This is the hallmark of muscle artifact. The topography also shows a localized 'bowtie' or shallow dipole pattern, which is common for muscle components, but the spectral signature alone is sufficient for a confident classification. The time series is somewhat erratic and spiky, further supporting this. There is no evidence of a 1/f brain-like spectrum, no sharp QRS-like spikes (heart), no tightly focused frontal dipole (eye), and no single electrode hot spot (channel noise). The 60 Hz notch is a normal filter artifact and not relevant for classification.",
+        "error": null
+    },
+    {
+        "component_index": 13,
+        "image_file": "ica_vision_test_output\\component_13_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.95,
+        "reason": "The topography shows a broad, dipolar pattern centered over the central/parietal region, not frontal or edge-focused. The power spectrum displays a clear 1/f-like pattern with decreasing power as frequency increases, and there is no sustained positive slope at high frequencies (which would indicate muscle). The time series is rhythmic and wave-like without abrupt level shifts or sharp, repetitive QRS-like spikes (which would indicate heart). There is a 60Hz notch, which is a normal filtering artifact and not indicative of line noise. No evidence of tightly focused frontal dipoles (eye) or single electrode focality (channel noise). Therefore, this component is best classified as 'brain'.",
+        "error": null
+    },
+    {
+        "component_index": 14,
+        "image_file": "ica_vision_test_output\\component_14_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.95,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from around 20-30Hz upwards, curving upwards at higher frequencies. This is the hallmark of muscle artifact, and this spectral pattern takes precedence over other features. The topography also shows a localized, somewhat edge-focused pattern, which is consistent with muscle activity. The time series is somewhat erratic and lacks the rhythmic, wave-like pattern of brain activity. There is no evidence of QRS-like spikes (heart), no tightly focused frontal dipole (eye), no single electrode hot spot (channel noise), and no sharp peak at 50/60Hz (line noise). Therefore, this component is best classified as 'muscle'.",
+        "error": null
+    },
+    {
+        "component_index": 15,
+        "image_file": "ica_vision_test_output\\component_15_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from around 20-30Hz upwards, curving upwards at higher frequencies. This is the hallmark of muscle artifact, and this spectral pattern takes precedence over other features. The topography also shows a localized, somewhat 'bowtie' pattern near the edge of the scalp, further supporting muscle classification. The time series is somewhat erratic and high-frequency, consistent with muscle activity. There is no evidence of QRS-like spikes (heart), no tightly focused frontal dipole (eye), and the spectrum is not 1/f-like (brain). The 60Hz notch is a normal filter artifact and not relevant for classification.",
+        "error": null
+    },
+    {
+        "component_index": 16,
+        "image_file": "ica_vision_test_output\\component_16_analysis.webp",
+        "classification_status": "Classified",
+        "label": "eye",
+        "confidence": 0.98,
+        "reason": "The topography shows a tightly focused, strong frontal activation centered at the top edge of the scalp, consistent with vertical eye movements or blinks. The time series does not display sharp, repetitive QRS-like spikes (ruling out 'heart'), and the power spectrum is dominated by low-frequency activity with no sustained positive slope at high frequencies (ruling out 'muscle'). There is no isolated single-electrode hot spot (ruling out 'channel_noise'), and no sharp peak at 50/60Hz (ruling out 'line_noise'). The spatial pattern and spectral features are classic for vertical eye movements/blinks.",
+        "error": null
+    },
+    {
+        "component_index": 17,
+        "image_file": "ica_vision_test_output\\component_17_analysis.webp",
+        "classification_status": "Classified",
+        "label": "eye",
+        "confidence": 0.98,
+        "reason": "The topography shows a tightly focused left-right frontal dipolar pattern, with strong activation in the frontal region (red on one side, blue on the other), which is characteristic of horizontal eye movements. The time series does not display prominent, sharp, repetitive QRS-like spikes (which would indicate 'heart'), but instead shows low-frequency, step-like fluctuations typical of eye activity. The power spectrum is dominated by low frequencies and does not show a sustained positive slope at high frequencies (which would indicate 'muscle'). There is a 60Hz notch, which is a normal filtering artifact and not indicative of line noise. All features are consistent with an 'eye' component.",
+        "error": null
+    },
+    {
+        "component_index": 18,
+        "image_file": "ica_vision_test_output\\component_18_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.9,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope starting from around 20-30 Hz and curving upwards at higher frequencies. This is the hallmark of muscle activity. The topography also shows a localized, edge-focused pattern in the upper left (likely temporal/occipital), which is consistent with muscle artifact. The time series is somewhat erratic but not the primary indicator here. There is no evidence of a dipolar brain pattern, no tightly focused frontal dipole (eye), no QRS-like spikes (heart), no single electrode hot spot (channel noise), and no sharp peak at 50/60Hz (line noise). The spectral signature is conclusive for muscle artifact.",
+        "error": null
+    },
+    {
+        "component_index": 19,
+        "image_file": "ica_vision_test_output\\component_19_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.95,
+        "reason": "The topography shows a clear dipolar pattern centered in the central-parietal region, not frontal or edge-focused. The power spectrum displays a classic 1/f-like decrease in power with increasing frequency, with no evidence of a sustained positive slope at high frequencies (which would indicate muscle). The time series is rhythmic and wave-like without abrupt level shifts or sharp, repetitive QRS-like spikes (which would indicate heart). There is a 60Hz notch, which is a normal filtering artifact and not indicative of line noise. No evidence of tightly focused frontal dipole (eye) or single electrode focality (channel noise). All features are consistent with a brain component.",
+        "error": null
+    },
+    {
+        "component_index": 20,
+        "image_file": "ica_vision_test_output\\component_20_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from around 20-30Hz upwards, curving upwards at higher frequencies. This is the hallmark of muscle artifact. The topography also shows a very localized, focal pattern (small 'hotspot' with adjacent polarity), which is typical for muscle components. The time series is somewhat erratic and high-frequency, further supporting this classification. There is no evidence of a 1/f pattern (brain), no sharp QRS-like spikes (heart), no tightly focused frontal dipole (eye), and no single electrode hot spot (channel noise). The 60Hz notch is a normal filtering artifact and not indicative of line noise. Therefore, this component is best classified as 'muscle' with high confidence.",
+        "error": null
+    },
+    {
+        "component_index": 21,
+        "image_file": "ica_vision_test_output\\component_21_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from around 20-30Hz upwards, curving upwards at higher frequencies. This is the hallmark of muscle artifact. The topography also shows a highly localized, edge-focused pattern in the upper right (temporal/edge region), which is typical for muscle components. The time series is somewhat erratic and spiky, further supporting this classification. There is no evidence of a dipolar brain pattern, no tightly focused frontal dipole (eye), no QRS-like spikes (heart), no single-electrode focality (channel noise), and no sharp positive peak at 50/60Hz (line noise). Therefore, this component is best classified as 'muscle'.",
+        "error": null
+    },
+    {
+        "component_index": 22,
+        "image_file": "ica_vision_test_output\\component_22_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The power spectrum shows a clear and sustained positive slope, with power increasing at higher frequencies (from ~20-30Hz upwards), which is the most decisive indicator for muscle artifact. The topography is localized, with a 'bowtie' or shallow dipole pattern near the edge of the scalp (right temporal region), further supporting muscle classification. The time series is somewhat erratic and spiky, consistent with muscle activity. There is no evidence of a 1/f brain-like spectrum, no sharp QRS-like spikes (heart), no tightly focused frontal dipole (eye), and no single electrode focality (channel noise). The 60Hz notch is a normal filter artifact and not relevant for classification.",
+        "error": null
+    },
+    {
+        "component_index": 23,
+        "image_file": "ica_vision_test_output\\component_23_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The decisive feature here is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from about 20-30Hz upwards, curving upwards at higher frequencies. This is the hallmark of muscle artifact and takes precedence over other features. The topography also shows a very localized, bowtie-like pattern near the edge of the scalp, which is typical for muscle components. The time series is somewhat erratic and high-frequency, further supporting this classification. There is no evidence of a 1/f brain-like spectrum, no sharp QRS-like spikes (heart), no tightly focused frontal dipole (eye), and no single-electrode focality (channel noise). The 60Hz notch is a normal filter artifact and not relevant for classification.",
+        "error": null
+    },
+    {
+        "component_index": 24,
+        "image_file": "ica_vision_test_output\\component_24_analysis.webp",
+        "classification_status": "Classified",
+        "label": "channel_noise",
+        "confidence": 0.98,
+        "reason": "The topography shows a single, highly localized 'hot spot' (blue) over one electrode in the right temporal region, with no clear opposite pole or dipolar structure. This is the classic pattern of channel noise, which is defined by a tiny, isolated focal area rather than a dipole. The time series and spectrum are not decisive here, but the topography is conclusive for channel noise. There is no evidence of a dipolar pattern (eye or brain), no broad field (heart), no sustained positive spectral slope (muscle), and no sharp 50/60Hz peak (line noise).",
+        "error": null
+    },
+    {
+        "component_index": 25,
+        "image_file": "ica_vision_test_output\\component_25_analysis.webp",
+        "classification_status": "Classified",
+        "label": "brain",
+        "confidence": 0.9,
+        "reason": "The topography shows a clear dipolar pattern centered over the central/parietal region, not frontal or edge-focused. The power spectrum displays a classic 1/f-like decrease in power with increasing frequency, with no evidence of a sustained positive slope at higher frequencies (which would indicate muscle). There is no sharp peak at 50/60Hz (only a notch, which is normal filtering), and the time series is rhythmic and wave-like without abrupt level shifts or sharp, repetitive QRS-like spikes. These features are consistent with a brain component.",
+        "error": null
+    },
+    {
+        "component_index": 26,
+        "image_file": "ica_vision_test_output\\component_26_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from around 20-30Hz upwards, curving upwards at higher frequencies. The topography shows a very localized 'hotspot' along the edge of the scalp (right temporal region), which is also typical for muscle artifacts. The time series is somewhat erratic and spiky, further supporting the muscle classification. There is no evidence of a dipolar brain pattern, no tightly focused frontal dipole (eye), no QRS-like spikes (heart), no single electrode focality (channel noise), and no sharp peak at 50/60Hz (line noise). The spectrum's positive slope is the strongest indicator, making this a clear muscle component.",
+        "error": null
+    },
+    {
+        "component_index": 27,
+        "image_file": "ica_vision_test_output\\component_27_analysis.webp",
+        "classification_status": "Classified",
+        "label": "channel_noise",
+        "confidence": 0.98,
+        "reason": "The topography shows a single, highly localized 'hot spot' (blue) over the left posterior/temporal edge, with no clear opposite pole or dipolar structure. This is characteristic of channel noise, which manifests as a tiny, isolated focal area on the scalp map. The time series and spectrum are not decisive for channel noise, but the focal topography is the critical feature. There is no evidence of a dipolar pattern (as seen in eye or brain), no broad field (heart), no sustained positive spectral slope (muscle), and no sharp 50/60Hz peak (line noise).",
+        "error": null
+    },
+    {
+        "component_index": 28,
+        "image_file": "ica_vision_test_output\\component_28_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from around 20-30Hz upwards, curving upwards at higher frequencies. This is the hallmark of muscle artifact. The topography also supports this, showing a localized 'bowtie' pattern near the edge of the scalp (right temporal/posterior region), which is common for muscle components. The time series is somewhat erratic and high-frequency, further supporting this classification. There is no evidence of a 1/f brain-like spectrum, no sharp QRS-like spikes (heart), no tightly focused frontal dipole (eye), and no single-electrode focality (channel noise). The 60Hz notch is a normal filtering artifact and not indicative of line noise. Therefore, this component is best classified as 'muscle'.",
+        "error": null
+    },
+    {
+        "component_index": 29,
+        "image_file": "ica_vision_test_output\\component_29_analysis.webp",
+        "classification_status": "Classified",
+        "label": "muscle",
+        "confidence": 0.98,
+        "reason": "The decisive feature is the power spectrum, which shows a clear and sustained positive slope: power increases with increasing frequency from around 20-30Hz upwards, curving upwards at higher frequencies. This is the hallmark of muscle artifact. The topography also supports this: it shows a very localized, edge-focused pattern in the left temporal region, which is common for muscle components. The time series is somewhat erratic and high-frequency, further supporting this classification. There is no evidence of a dipolar brain pattern, no tightly focused frontal dipole (eye), no QRS-like spikes (heart), and no single electrode hot spot (channel noise). The 60Hz notch is a normal filter artifact, not line noise. Therefore, this component is best classified as 'muscle'.",
+        "error": null
+    }
+]
