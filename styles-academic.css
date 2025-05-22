@@ -919,6 +919,570 @@ blockquote {
     }
 }
 
+/* Peak Analysis Academic Styles */
+.peak-analysis-academic {
+    background: var(--light-gray);
+    padding: var(--space-lg);
+    border-radius: 0.5rem;
+    margin: var(--space-lg) 0;
+    border-left: 4px solid var(--academic-blue);
+}
+
+.peak-analysis-academic h5 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.candidate-list {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.candidate-item {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--pure-white);
+    border-radius: 0.25rem;
+    border: 1px solid #e2e8f0;
+    font-size: 0.875rem;
+    font-family: var(--font-secondary);
+}
+
+.candidate-item strong {
+    color: var(--academic-blue);
+}
+
+/* Module Performance Grid */
+.module-performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.module-perf-item {
+    padding: var(--space-lg);
+    background: var(--light-gray);
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.module-perf-item h4 {
+    color: var(--academic-blue);
+    margin-bottom: var(--space-md);
+    font-size: 1.125rem;
+}
+
+.module-perf-item ul {
+    margin: 0;
+    padding-left: var(--space-lg);
+}
+
+.module-perf-item li {
+    font-size: 0.875rem;
+    margin-bottom: var(--space-xs);
+    color: var(--text-secondary);
+}
+
+/* Enhanced Academic Tables */
+.academic-table th {
+    position: sticky;
+    top: 0;
+    background: var(--light-gray);
+    z-index: 10;
+}
+
+.academic-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* Metrics Grid Enhanced */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.metric-item {
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--pure-white);
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: var(--shadow-subtle);
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--academic-blue);
+    font-family: var(--font-secondary);
+    display: block;
+    margin-bottom: var(--space-sm);
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    display: block;
+}
+
+.metric-significance {
+    font-size: 0.75rem;
+    color: var(--text-caption);
+    font-style: italic;
+    font-family: var(--font-secondary);
+}
+
+/* Enhanced Blockquotes for Testimonials */
+blockquote {
+    border-left: 4px solid var(--academic-blue);
+    padding: var(--space-lg);
+    margin: var(--space-xl) 0;
+    font-style: italic;
+    color: var(--text-secondary);
+    background: var(--light-gray);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: var(--line-height-reading);
+}
+
+blockquote br {
+    margin-bottom: var(--space-md);
+}
+
+/* Academic Emphasis */
+em {
+    font-style: italic;
+    color: var(--text-caption);
+    font-size: 0.95em;
+}
+
+/* Responsive Academic Enhancements */
+@media (max-width: 768px) {
+    .module-performance-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .candidate-list {
+        font-size: 0.8rem;
+    }
+    
+    .metric-value {
+        font-size: 2rem;
+    }
+    
+    .academic-table {
+        font-size: 0.8rem;
+    }
+    
+    .academic-table th,
+    .academic-table td {
+        padding: var(--space-sm);
+    }
+    
+    blockquote {
+        padding: var(--space-md);
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .peak-analysis-academic {
+        padding: var(--space-md);
+    }
+    
+    .module-perf-item {
+        padding: var(--space-md);
+    }
+}
+
+/* Migration Phases Styling */
+.migration-phases {
+    display: grid;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.phase-item {
+    background: var(--pure-white);
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+}
+
+.phase-header {
+    background: var(--academic-blue);
+    color: white;
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.phase-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.phase-header h5 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.phase-content {
+    padding: var(--space-lg);
+}
+
+.phase-content p strong {
+    color: var(--academic-blue);
+}
+
+.phase-content ul {
+    margin: var(--space-md) 0;
+}
+
+.phase-content li {
+    margin-bottom: var(--space-xs);
+    font-size: 0.9rem;
+}
+
+/* Code Examples Enhanced */
+.code-examples {
+    margin: var(--space-lg) 0;
+}
+
+.example-block {
+    background: var(--light-gray);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.example-block h5 {
+    background: var(--academic-blue);
+    color: white;
+    padding: var(--space-md) var(--space-lg);
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.example-block pre {
+    margin: 0;
+    background: var(--pure-white);
+    border: none;
+}
+
+/* Responsive Migration Phases */
+@media (max-width: 768px) {
+    .migration-phases {
+        gap: var(--space-lg);
+    }
+    
+    .phase-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
+    }
+    
+    .phase-content {
+        padding: var(--space-md);
+    }
+    
+    .example-block h5 {
+        padding: var(--space-sm) var(--space-md);
+    }
+}
+
+/* Print Enhancements for Academic Use */
+@media print {
+    .metrics-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .metric-item {
+        flex: 0 0 200px;
+        margin: var(--space-sm);
+        break-inside: avoid;
+    }
+    
+    .module-performance-grid {
+        break-inside: avoid;
+    }
+    
+    .peak-analysis-academic {
+        break-inside: avoid;
+    }
+    
+    .migration-phases {
+        break-inside: avoid;
+    }
+    
+    .phase-item {
+        break-inside: avoid;
+        margin-bottom: var(--space-md);
+    }
+    
+    blockquote {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .academic-table {
+        break-inside: avoid;
+        font-size: 9pt;
+    }
+    
+    .academic-table th,
+    .academic-table td {
+        padding: 0.3rem;
+    }
+    
+    .example-block {
+        break-inside: avoid;
+    }
+}
+
+/* Research Questions and Experiment Details */
+.research-questions {
+    display: grid;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.research-question {
+    padding: var(--space-lg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-subtle);
+}
+
+.research-question h4 {
+    color: var(--academic-blue);
+    margin-bottom: var(--space-sm);
+}
+
+.experiment-details {
+    margin: var(--space-lg) 0;
+    padding: var(--space-lg);
+    border-left: 4px solid var(--academic-blue);
+    background: var(--bg-subtle);
+}
+
+/* Component Categories and Method Details */
+.component-categories {
+    display: grid;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.category-detail {
+    padding: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.category-detail h6 {
+    color: var(--academic-blue);
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+}
+
+/* Processing Architecture and Detection Methods */
+.processing-architecture,
+.artifact-detection-methods,
+.consistency-analysis,
+.recovery-strategies,
+.bad-channel-criteria,
+.spatial-pattern-analysis {
+    margin: var(--space-xl) 0;
+}
+
+.detection-method,
+.consistency-method,
+.pattern-analysis-method,
+.criterion-category {
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    border-left: 3px solid var(--academic-blue);
+    background: var(--bg-subtle);
+}
+
+.detection-method h6,
+.consistency-method h6,
+.pattern-analysis-method h6,
+.criterion-category h6 {
+    color: var(--academic-blue);
+    margin-bottom: var(--space-sm);
+}
+
+/* Application Contexts and Integration */
+.application-contexts,
+.research-applications,
+.context-integration,
+.population-protocols {
+    display: grid;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.application-detail,
+.application-paradigm,
+.clinical-context,
+.research-context,
+.population-group {
+    padding: var(--space-lg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-subtle);
+}
+
+.application-detail h6,
+.application-paradigm h6,
+.clinical-context h6,
+.research-context h6,
+.population-group h6 {
+    color: var(--academic-blue);
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+}
+
+/* Interface Features and Quality Assurance */
+.interface-features,
+.quality-assurance,
+.temporal-analysis {
+    margin: var(--space-xl) 0;
+}
+
+.interface-features ul,
+.quality-assurance ul,
+.temporal-analysis ul {
+    list-style: none;
+    padding: 0;
+}
+
+.interface-features li,
+.quality-assurance li,
+.temporal-analysis li {
+    padding: var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-sm);
+    border-left: 3px solid var(--academic-blue);
+    background: var(--bg-subtle);
+}
+
+/* Cross-Module Integration Styling */
+.processing-workflow,
+.decision-framework,
+.trial-analysis-framework {
+    margin: var(--space-xl) 0;
+}
+
+.processing-workflow ol {
+    padding-left: var(--space-xl);
+}
+
+.processing-workflow li,
+.decision-path {
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+    background: var(--bg-subtle);
+    border-radius: 4px;
+}
+
+.decision-path h6 {
+    color: var(--academic-blue);
+    margin-bottom: var(--space-sm);
+}
+
+.decision-path p {
+    margin-bottom: var(--space-xs);
+    font-size: 0.9rem;
+}
+
+/* Enhanced Code Blocks for Module Examples */
+pre code {
+    display: block;
+    padding: var(--space-lg);
+    background: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Academic Figure Enhancements */
+.academic-figure {
+    margin: var(--space-xl) 0;
+    text-align: center;
+}
+
+.academic-figure img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.figure-caption {
+    margin-top: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Design for New Elements */
+@media (max-width: 768px) {
+    .component-categories,
+    .application-contexts,
+    .research-applications,
+    .context-integration,
+    .population-protocols {
+        grid-template-columns: 1fr;
+    }
+    
+    .experiment-details,
+    .category-detail,
+    .detection-method,
+    .application-detail {
+        padding: var(--space-md);
+        margin-bottom: var(--space-md);
+    }
+    
+    .processing-workflow ol {
+        padding-left: var(--space-lg);
+    }
+    
+    pre code {
+        padding: var(--space-md);
+        font-size: 0.8rem;
+    }
+}
+
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
     :root {
@@ -930,7 +1494,14 @@ blockquote {
     
     .academic-table,
     .academic-figure img,
-    .academic-chart {
+    .academic-chart,
+    .metric-item,
+    .module-perf-item,
+    .peak-analysis-academic,
+    .experiment-details,
+    .category-detail,
+    .detection-method,
+    .application-detail {
         border: 2px solid #000;
     }
     
